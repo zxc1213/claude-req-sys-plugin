@@ -354,4 +354,172 @@ describe('plan-sync Utility', () => {
       expect(result).to.be.true;
     });
   });
+
+  describe('syncMetadataSection() - 元数据章节同步', () => {
+    it('should update status in metadata section when completed', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-MD-001');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-MD-001',
+        type: 'feature',
+        title: '元数据测试1',
+        description: '测试',
+        status: 'completed',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 元数据
+
+- **需求ID**: FEAT-MD-001
+- **状态**: in_progress
+
+## 任务
+- 任务1
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      await syncPlanStatus(TEST_BASE_DIR, reqPath);
+
+      const updated = await fs.readFile(planPath, 'utf-8');
+      expect(updated).to.include('- **状态**: completed');
+      expect(updated).to.not.include('- **状态**: in_progress');
+    });
+
+    it('should update status in metadata section when open', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-MD-002');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-MD-002',
+        type: 'feature',
+        title: '元数据测试2',
+        description: '测试',
+        status: 'open',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 元数据
+
+- **需求ID**: FEAT-MD-002
+- **状态**: completed
+
+## 任务
+- 任务1
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      await syncPlanStatus(TEST_BASE_DIR, reqPath);
+
+      const updated = await fs.readFile(planPath, 'utf-8');
+      expect(updated).to.include('- **状态**: open');
+      expect(updated).to.not.include('- **状态**: completed');
+    });
+
+    it('should update status in metadata section when in_progress', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-MD-003');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-MD-003',
+        type: 'feature',
+        title: '元数据测试3',
+        description: '测试',
+        status: 'in_progress',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 元数据
+
+- **需求ID**: FEAT-MD-003
+- **状态**: open
+
+## 任务
+- 任务1
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      await syncPlanStatus(TEST_BASE_DIR, reqPath);
+
+      const updated = await fs.readFile(planPath, 'utf-8');
+      expect(updated).to.include('- **状态**: in_progress');
+      expect(updated).to.not.include('- **状态**: open');
+    });
+
+    it('should handle plan without metadata section gracefully', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-MD-004');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-MD-004',
+        type: 'feature',
+        title: '无元数据章节',
+        description: '测试',
+        status: 'completed',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 任务
+- 任务1
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      // 不应该抛出错误
+      const result = await syncPlanStatus(TEST_BASE_DIR, reqPath);
+      expect(result).to.be.true;
+    });
+
+    it('should handle metadata section without status line gracefully', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-MD-005');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-MD-005',
+        type: 'feature',
+        title: '元数据无状态行',
+        description: '测试',
+        status: 'completed',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 元数据
+
+- **需求ID**: FEAT-MD-005
+- **计划制定日期**: 2026-05-23
+
+## 任务
+- 任务1
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      // 不应该抛出错误
+      const result = await syncPlanStatus(TEST_BASE_DIR, reqPath);
+      expect(result).to.be.true;
+    });
+  });
 });

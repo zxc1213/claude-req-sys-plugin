@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2026-05-23
+
+### Added
+
+#### Superpowers 技能集成系统
+
+- 完整的技能接口抽象层 (`skill-interface.js`)
+- 5个技能适配器 (brainstorming, debugging, research, code-explorer, planning)
+- 技能版本管理 (`skill-versions.json`)
+- 技能健康检查 CLI (`claude-req-skill-health`)
+- 降级策略支持 (template/manual/simulation/error)
+- 集成测试套件 (36个测试用例)
+
+#### 改进
+
+- 调度器集成技能接口和适配器
+- 路由器支持降级模式配置
+- 技能状态缓存机制 (60秒 TTL)
+
+### Technical Details
+
+- 技能创建速度: < 100ms
+- 计划生成速度: < 50ms
+- 测试通过率: 100% (36/36)
+
 ## [Unreleased]
 
 ### Added

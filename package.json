@@ -33,6 +33,7 @@
     "claude-req-init": "bin/claude-req-init.js",
     "claude-req-update": "bin/claude-req-update.js",
     "claude-req-track": "bin/claude-req-track.js",
+    "claude-req-sync-plans": "bin/claude-req-sync-plans.js",
     "claude-req-skill-health": "bin/claude-req-skill-health.js",
     "kg-search": "bin/kg-cli.js",
     "kg-stats": "bin/kg-cli.js",

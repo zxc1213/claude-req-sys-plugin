@@ -5,6 +5,7 @@
 import { generate } from '../utils/id-generator.js';
 import { createRequirementDir, readMeta, writeMeta, exists } from '../utils/storage.js';
 import { trackDocuments } from '../utils/document-tracker.js';
+import { syncPlanStatus } from '../utils/plan-sync.js';
 import path from 'path';
 import fs from 'fs/promises';
 import { getKnowledgeGraph } from '../../knowledge-graph/index.js';
@@ -249,6 +250,9 @@ ${description}
 
     // 写回元数据
     await writeMeta(this.baseDir, reqPath, updatedMeta);
+
+    // 同步状态到 plan.md
+    await syncPlanStatus(this.baseDir, reqPath);
 
     // 同步到知识图谱
     try {

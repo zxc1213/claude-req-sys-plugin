@@ -3,6 +3,10 @@
  *
  * 解决问题：当需求状态更新时，plan.md 中的状态保持不变
  * 解决方案：在状态更新时自动同步进度信息到 plan.md
+ *
+ * 功能：
+ * - syncPlanStatus() - 同步整体状态到进度区块
+ * - syncAcceptanceCriteria() - 同步验收标准复选框
  */
 
 import { readMeta } from './storage.js';
@@ -74,6 +78,9 @@ export async function syncPlanStatus(baseDir, reqPath) {
         // 如果没有标题，直接在开头添加
         updatedPlan = progressBlock + planContent;
       }
+
+      // 同步验收标准章节
+      updatedPlan = syncAcceptanceCriteria(updatedPlan, meta.status);
     }
 
     await fs.writeFile(planPath, updatedPlan, 'utf-8');
@@ -159,4 +166,36 @@ export async function syncAllPlans(baseDir, reqPaths) {
   }
 
   return results;
+}
+
+/**
+ * 同步验收标准章节的复选框状态
+ * @param {string} planContent - plan.md 内容
+ * @param {string} status - 需求状态
+ * @returns {string} 更新后的 plan.md 内容
+ */
+function syncAcceptanceCriteria(planContent, status) {
+  // 查找验收标准章节
+  const acceptanceRegex = /## 验收标准[\s\S]*?(?=\n## |\n---|$)/;
+
+  const match = planContent.match(acceptanceRegex);
+  if (!match) {
+    // 没有验收标准章节，返回原内容
+    return planContent;
+  }
+
+  const acceptanceSection = match[0];
+  let updatedSection = acceptanceSection;
+
+  if (status === 'completed') {
+    // 已完成：将所有未勾选项改为已勾选
+    updatedSection = acceptanceSection.replace(/^- \[ \]/gm, '- [x]');
+  } else if (status === 'open') {
+    // 未开始：将所有已勾选项改为未勾选
+    updatedSection = acceptanceSection.replace(/^- \[x\]/gm, '- [ ]');
+  }
+  // in_progress 状态保持原样
+
+  // 替换验收标准章节
+  return planContent.replace(acceptanceRegex, updatedSection);
 }

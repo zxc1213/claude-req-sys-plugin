@@ -220,4 +220,138 @@ describe('plan-sync Utility', () => {
       expect(results.failed).to.equal(0);
     });
   });
+
+  describe('syncAcceptanceCriteria() - 验收标准同步', () => {
+    it('should check all criteria when status is completed', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-AC-001');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-AC-001',
+        type: 'feature',
+        title: '验收标准测试',
+        description: '测试',
+        status: 'completed',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 验收标准
+- [x] 已完成任务1
+- [ ] 未完成任务2
+- [ ] 未完成任务3
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      await syncPlanStatus(TEST_BASE_DIR, reqPath);
+
+      const updated = await fs.readFile(planPath, 'utf-8');
+      const checkedCount = (updated.match(/- \[x\]/g) || []).length;
+      const uncheckedCount = (updated.match(/- \[ \]/g) || []).length;
+
+      expect(checkedCount).to.equal(3); // 全部勾选
+      expect(uncheckedCount).to.equal(0);
+    });
+
+    it('should uncheck all criteria when status is open', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-AC-002');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-AC-002',
+        type: 'feature',
+        title: '验收标准测试2',
+        description: '测试',
+        status: 'open',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 验收标准
+- [x] 任务1
+- [x] 任务2
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      await syncPlanStatus(TEST_BASE_DIR, reqPath);
+
+      const updated = await fs.readFile(planPath, 'utf-8');
+      const checkedCount = (updated.match(/- \[x\]/g) || []).length;
+      const uncheckedCount = (updated.match(/- \[ \]/g) || []).length;
+
+      expect(checkedCount).to.equal(0); // 全部不勾选
+      expect(uncheckedCount).to.equal(2);
+    });
+
+    it('should preserve criteria when status is in_progress', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-AC-003');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-AC-003',
+        type: 'feature',
+        title: '验收标准测试3',
+        description: '测试',
+        status: 'in_progress',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const originalContent = `# 计划
+
+## 验收标准
+- [x] 已完成
+- [ ] 未完成
+`;
+      await fs.writeFile(planPath, originalContent, 'utf-8');
+
+      await syncPlanStatus(TEST_BASE_DIR, reqPath);
+
+      const updated = await fs.readFile(planPath, 'utf-8');
+      const acceptanceSection = updated.match(/## 验收标准[\s\S]*?(?=\n## |\n---|$)/)[0];
+
+      // in_progress 应该保持原样
+      expect(acceptanceSection).to.include('- [x] 已完成');
+      expect(acceptanceSection).to.include('- [ ] 未完成');
+    });
+
+    it('should handle plan without acceptance criteria gracefully', async () => {
+      const reqPath = path.join(TEST_BASE_DIR, 'FEAT-AC-004');
+      await fs.mkdir(reqPath, { recursive: true });
+
+      const meta = {
+        id: 'FEAT-AC-004',
+        type: 'feature',
+        title: '无验收标准',
+        description: '测试',
+        status: 'completed',
+        created: '2026-05-23T00:00:00.000Z',
+        updatedAt: '2026-05-23T00:00:00.000Z',
+      };
+      await writeMeta(TEST_BASE_DIR, reqPath, meta);
+
+      const planPath = path.join(reqPath, 'plan.md');
+      const planContent = `# 计划
+
+## 任务
+- 任务1
+- 任务2
+`;
+      await fs.writeFile(planPath, planContent, 'utf-8');
+
+      // 不应该抛出错误
+      const result = await syncPlanStatus(TEST_BASE_DIR, reqPath);
+      expect(result).to.be.true;
+    });
+  });
 });

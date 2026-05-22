@@ -1,0 +1,59 @@
+{
+  "name": "claude-req-sys-plugin",
+  "version": "0.7.0",
+  "description": "ClaudeReqSys Plugin - 智能需求管理系统，从需求到测试的全流程自动化",
+  "type": "module",
+  "files": [
+    ".claude-plugin/",
+    "skills/",
+    "commands/",
+    "hooks/",
+    "scripts/",
+    "bin/",
+    "README.md"
+  ],
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "requirement-management",
+    "automation",
+    "skills"
+  ],
+  "author": "19944",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zxc1213/claude-req-sys.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zxc1213/claude-req-sys/issues"
+  },
+  "homepage": "https://github.com/zxc1213/claude-req-sys#readme",
+  "bin": {
+    "claude-req-init": "bin/claude-req-init.js",
+    "claude-req-update": "bin/claude-req-update.js",
+    "claude-req-track": "bin/claude-req-track.js",
+    "claude-req-sync-plans": "bin/claude-req-sync-plans.js",
+    "claude-req-skill-health": "bin/claude-req-skill-health.js",
+    "kg-search": "bin/kg-cli.js",
+    "kg-stats": "bin/kg-cli.js",
+    "kg-connections": "bin/kg-cli.js",
+    "kg-recommend": "bin/kg-cli.js",
+    "kg-rebuild": "bin/kg-cli.js"
+  },
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "fs-extra": "^11.2.0",
+    "fuse.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.0",
+    "chai": "^5.1.2",
+    "eslint": "^9.18.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "mocha": "^11.1.0",
+    "prettier": "^3.4.2"
+  }
+}

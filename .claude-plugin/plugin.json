@@ -1,0 +1,58 @@
+{
+  "name": "claude-req-sys",
+  "version": "0.6.0",
+  "description": "智能需求管理系统 - 从需求到测试的全流程自动化",
+  "author": "19944",
+  "license": "MIT",
+  "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zxc1213/claude-req-sys-plugin.git"
+  },
+  "skills": [
+    "req-manager",
+    "req-brainstorm",
+    "req-priority",
+    "req-quality",
+    "req-unify",
+    "req-test-plan",
+    "req-verify",
+    "req-metrics",
+    "req-init",
+    "req-update",
+    "req-change",
+    "req-migrate"
+  ],
+  "commands": [
+    "req",
+    "req-init",
+    "req-update",
+    "req-priority",
+    "req-quality",
+    "req-test-plan",
+    "req-verify",
+    "req-brainstorm",
+    "req-change",
+    "req-migrate",
+    "req-unify",
+    "metrics"
+  ],
+  "hooks": {
+    "PostToolUse": ["post-req-update"],
+    "Stop": ["stop-req-summary"]
+  },
+  "bin": [
+    "claude-req-init",
+    "claude-req-update",
+    "kg-search",
+    "kg-stats",
+    "kg-connections",
+    "kg-recommend",
+    "kg-rebuild"
+  ],
+  "settings": {
+    "env": {
+      "CLAUDE_REQ_SYS": "{{PLUGIN_DIR}}"
+    }
+  }
+}

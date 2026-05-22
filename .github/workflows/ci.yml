@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  test:
+    name: 测试 & 代码检查
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 运行 ESLint
+        run: npm run lint
+
+      - name: 运行 Prettier 检查
+        run: npm run format:check
+
+      - name: 运行测试
+        run: npm test
+
+      - name: 生成覆盖率报告
+        run: npm run test:coverage
+
+      - name: 上传覆盖率到 Codecov
+        uses: codecov/codecov-action@v4
+        if: matrix.node-version == '20.x'
+        with:
+          files: ./coverage/coverage-final.json
+          flags: unittests
+          name: codecov-umbrella
+
+  lint-commit:
+    name: Commit Message 检查
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 检查 Commit Message
+        uses: wagoid/commitlint-github-action@v6
+        with:
+          configFile: commitlint.config.js

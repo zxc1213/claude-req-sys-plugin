@@ -1,0 +1,70 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"{{CLAUDE_REQ_SYS}}/scripts/conversation-logger/hooks/session-start.js\"",
+            "timeout": 5
+          }
+        ],
+        "description": "初始化对话记录器",
+        "id": "conv:session:start"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"{{CLAUDE_REQ_SYS}}/scripts/hooks/post-req-update.js\"",
+            "timeout": 10
+          }
+        ],
+        "description": "更新需求记录",
+        "id": "post:req:update"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"{{CLAUDE_REQ_SYS}}/scripts/conversation-logger/hooks/post-tool-use.js\"",
+            "timeout": 5
+          }
+        ],
+        "description": "记录工具调用",
+        "id": "conv:post:tool:use"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"{{CLAUDE_REQ_SYS}}/scripts/hooks/stop-req-summary.js\"",
+            "timeout": 10
+          }
+        ],
+        "description": "生成需求执行总结",
+        "id": "stop:req:summary"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"{{CLAUDE_REQ_SYS}}/scripts/conversation-logger/hooks/stop.js\"",
+            "timeout": 5
+          }
+        ],
+        "description": "保存对话记录",
+        "id": "conv:stop"
+      }
+    ]
+  }
+}

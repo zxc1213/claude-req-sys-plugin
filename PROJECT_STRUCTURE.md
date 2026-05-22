@@ -356,19 +356,38 @@ Git 钩子配置，自动化代码质量检查。
 
 项目集成了 **code-review-graph**，提供基于代码依赖关系的智能分析和可视化。
 
-**构建知识图谱**：
+#### 手动触发和更新
+
+**完整构建**：
 
 ```bash
 # 使用 MCP 工具构建完整图谱
 mcp__code-review-graph__build_or_update_graph_tool
+  full_rebuild=true
+  repo_root="E:\\AI_Project\\ClaudeReqSys"
+  postprocess="full"
+```
 
-# 增量更新（仅变更文件）
+**增量更新**（推荐，仅处理变更文件）：
+
+```bash
+# 增量更新（默认）
 mcp__code-review-graph__build_or_update_graph_tool
   full_rebuild=false
   repo_root="E:\\AI_Project\\ClaudeReqSys"
+  base="HEAD~1"  # 与指定 commit 比较
 ```
 
-**查询代码图谱**：
+**重新生成 Wiki**：
+
+```bash
+# 强制重新生成所有 Wiki 页面
+mcp__code-review-graph__generate_wiki_tool
+  repo_root="E:\\AI_Project\\ClaudeReqSys"
+  force=true
+```
+
+#### 查询代码图谱
 
 ```bash
 # 获取架构概览
@@ -376,43 +395,143 @@ mcp__code-review-graph__get_architecture_overview_tool
 
 # 列出代码社区
 mcp__code-review-graph__list_communities_tool
+  sort_by="size"  # 按大小排序: size/cohesion/name
 
-# 查找代码实体
+# 查找代码实体（语义搜索）
 mcp__code-review-graph__semantic_search_nodes_tool
+  query="需求处理器"
+  limit=20
 
 # 查询代码关系
 mcp__code-review-graph__query_graph_tool
+  pattern="callees_of"  # callers_of, callees_of, imports_of, children_of
+  target="Processor"
 ```
 
-**图谱统计**（当前项目）：
+#### 图谱统计
+
+当前项目的代码图谱统计：
 
 - 解析文件: 49 个
 - 代码节点: 536 个
 - 依赖关系: 3990 条边
 - 代码社区: 11 个
 - 执行流: 57 个
+- Wiki 页面: 12 个
 
-### ZRead - GitHub 代码阅读
+#### Wiki 文档
 
-**ZRead** 是一个强大的 GitHub 代码阅读 CLI 工具。
-
-**安装和使用**：详见 [https://zread.ai/cli](https://zread.ai/cli)
-
-**基本用法**：
+生成的 Wiki 页面存储在 `.code-review-graph/wiki/` 目录：
 
 ```bash
-# 安装 zread CLI
-npm install -g @zread/cli
+# 查看所有 Wiki 页面
+ls .code-review-graph/wiki/
 
-# 获取仓库结构
+# 查看特定社区的 Wiki
+cat .code-review-graph/wiki/requirement-manager.md
+```
+
+### ZRead - GitHub 代码阅读和 Wiki 生成
+
+**ZRead** 是一个强大的 AI 驱动代码阅读和 Wiki 生成 CLI 工具。
+
+#### 安装
+
+```bash
+# 全局安装 zread CLI（注意包名是 zread_cli）
+npm install -g zread_cli
+
+# 或使用 Homebrew（macOS/Linux）
+brew install zread
+
+# 验证安装
+zread version
+```
+
+#### 手动触发和更新
+
+**首次生成 Wiki**：
+
+```bash
+# 在项目根目录执行生成
+zread generate
+
+# 选项说明：
+# --resume    恢复之前的草稿（默认）
+# --clear     清除现有草稿重新生成
+# --cancel    取消现有草稿
+# --yes       自动确认所有提示
+zread generate --clear
+```
+
+**查看生成的 Wiki**：
+
+```bash
+# 在浏览器中打开 Wiki
+zread browse
+
+# 或直接访问生成的文档目录
+# 文档存储位置：~/.zread/workspace/<project-name>/
+```
+
+**更新 Wiki**：
+
+```bash
+# 代码变更后重新生成
+zread generate --clear
+
+# 增量更新（保留已有内容）
+zread generate --resume
+```
+
+#### GitHub 代码阅读
+
+**获取仓库结构**：
+
+```bash
+# 列出仓库目录结构
 zread ls zxc1213/claude-req-sys
 
-# 读取文件内容
+# 查看特定目录
+zread ls zxc1213/claude-req-sys:scripts/
+```
+
+**读取文件内容**：
+
+```bash
+# 读取单个文件
 zread cat zxc1213/claude-req-sys:scripts/requirement-manager/core/processor.js
 
-# 搜索代码
-zread search zxc1213/claude-req-sys "需求处理器"
+# 读取多个文件
+zread cat zxc1213/claude-req-sys:package.json README.md
 ```
+
+**搜索代码**：
+
+```bash
+# 在仓库中搜索关键词
+zread search zxc1213/claude-req-sys "需求处理器"
+
+# 搜索函数定义
+zread search zxc1213/claude-req-sys "function.*create"
+```
+
+#### 配置管理
+
+```bash
+# 查看配置
+zread config show
+
+# 设置语言（中文/英文）
+zread config set language zh
+
+# 登录 Z.AI（使用高级功能）
+zread login
+```
+
+#### 官方文档
+
+详细使用说明：[https://zread.ai/cli](https://zread.ai/cli)
 
 ### 知识图谱 Wiki
 

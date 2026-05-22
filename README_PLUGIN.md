@@ -1,5 +1,7 @@
 # ClaudeReqSys Plugin
 
+> **⚠️ 注意**: 此插件未发布到 Claude Code 官方市场。请通过 GitHub 仓库安装。
+
 > **Claude Code 插件** - 智能需求管理系统，从需求到测试的全流程自动化
 
 [![Version](https://img.shields.io/badge/version-0.6.0-blue)](https://github.com/zxc1213/claude-req-sys)
@@ -9,12 +11,35 @@
 
 ### 安装
 
-```bash
-# 通过 Claude Code 插件市场安装
-/plugin install claude-req-sys
+**从 GitHub 安装**（推荐）:
 
-# 本地测试
-claude --plugin-dir ./claude-req-sys
+```bash
+# 从 GitHub 仓库安装
+/plugin install https://github.com/zxc1213/claude-req-sys
+
+# 或者使用 git+ 协议
+/plugin install git+https://github.com/zxc1213/claude-req-sys.git
+
+# 或者使用 ssh 协议（如果你有写权限）
+/plugin install git+ssh://git@github.com/zxc1213/claude-req-sys.git
+```
+
+**本地测试**:
+
+```bash
+# 克隆仓库后本地测试
+git clone https://github.com/zxc1213/claude-req-sys.git
+cd claude-req-sys
+claude --plugin-dir .
+```
+
+**团队内私有安装**:
+
+如果你们使用私有的 GitHub 仓库：
+
+```bash
+# 从私有仓库安装
+/plugin install https://github.com/your-org/claude-req-sys
 ```
 
 ### 核心功能
@@ -116,10 +141,26 @@ kg-rebuild
 2. **安装插件版本**:
 
    ```bash
-   /plugin install claude-req-sys
+   /plugin install https://github.com/zxc1213/claude-req-sys
    ```
 
 3. **数据兼容性**: 现有的 `.requirements/` 目录完全兼容，无需迁移
+
+## 🔧 开发者安装
+
+如果你想从源码开发或测试：
+
+```bash
+# 克隆仓库
+git clone https://github.com/zxc1213/claude-req-sys.git
+cd claude-req-sys
+
+# 本地测试
+claude --plugin-dir .
+
+# 或者安装到本地
+claude --plugin-dir . --install
+```
 
 ## 📁 插件结构
 

@@ -7,8 +7,8 @@
 ### Claude Code 插件安装
 
 ```bash
-# 从 feature/plugin-migration 分支安装
-/plugin install https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+# 从新插件仓库安装
+/plugin install https://github.com/zxc1213/claude-req-sys-plugin
 
 # 安装后直接使用
 /req 添加新功能
@@ -45,9 +45,9 @@
 ## 🔄 更新方式
 
 ```bash
-/plugin update claude-req-sys
+/plugin update claude-req-sys-plugin
 # 或重新安装
-/plugin install --force https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+/plugin install --force https://github.com/zxc1213/claude-req-sys-plugin
 ```
 
 ## 使用
@@ -206,8 +206,8 @@ your-project/
 ### 快速开始
 
 ```bash
-git clone https://github.com/zxc1213/claude-req-sys.git
-cd claude-req-sys
+git clone https://github.com/zxc1213/claude-req-sys-plugin.git
+cd claude-req-sys-plugin
 npm install
 ```
 
@@ -272,8 +272,8 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 联系方式
 
-- GitHub: [zxc1213/claude-req-sys](https://github.com/zxc1213/claude-req-sys)
-- Issues: [GitHub Issues](https://github.com/zxc1213/claude-req-sys/issues)
+- GitHub: [zxc1213/claude-req-sys-plugin](https://github.com/zxc1213/claude-req-sys-plugin)
+- Issues: [GitHub Issues](https://github.com/zxc1213/claude-req-sys-plugin/issues)
 
 ---
 

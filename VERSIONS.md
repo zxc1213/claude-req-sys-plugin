@@ -61,7 +61,7 @@ ClaudeReqSys 现在提供 **Claude Code 插件**作为主要安装方式。
 
 - **插件版本文档**: [README_PLUGIN.md](README_PLUGIN.md)
 - **插件安装指南**: [INSTALL.md](INSTALL.md)
-- **改造方案**: [plugin-migration-plan.md](docs/plugin-migration-plan.md)
+- **项目主页**: https://github.com/zxc1213/claude-req-sys-plugin
 
 ---
 

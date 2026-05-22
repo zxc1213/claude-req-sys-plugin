@@ -4,7 +4,7 @@
 
 > **Claude Code 插件** - 智能需求管理系统，从需求到测试的全流程自动化
 
-[![Version](https://img.shields.io/badge/version-0.6.0-blue)](https://github.com/zxc1213/claude-req-sys)
+[![Version](https://img.shields.io/badge/version-0.6.0-blue)](https://github.com/zxc1213/claude-req-sys-plugin)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## 🚀 快速开始
@@ -15,20 +15,20 @@
 
 ```bash
 # 从 feature/plugin-migration 分支安装插件版本
-/plugin install https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+/plugin install https://github.com/zxc1213/claude-req-sys-plugin/tree/feature/plugin-migration
 
 # 或者使用 git+ 协议指定分支
-/plugin install git+https://github.com/zxc1213/claude-req-sys.git#feature/plugin-migration
+/plugin install git+https://github.com/zxc1213/claude-req-sys-plugin.git#feature/plugin-migration
 
 # 或者使用 ssh 协议（如果你有写权限）
-/plugin install git+ssh://git@github.com/zxc1213/claude-req-sys.git#feature/plugin-migration
+/plugin install git+ssh://git@github.com/zxc1213/claude-req-sys-plugin.git#feature/plugin-migration
 ```
 
 **本地测试**:
 
 ```bash
 # 克隆仓库后本地测试
-git clone https://github.com/zxc1213/claude-req-sys.git
+git clone https://github.com/zxc1213/claude-req-sys-plugin.git
 cd claude-req-sys
 claude --plugin-dir .
 ```
@@ -141,7 +141,7 @@ kg-rebuild
 2. **安装插件版本**:
 
    ```bash
-   /plugin install https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+   /plugin install https://github.com/zxc1213/claude-req-sys-plugin/tree/feature/plugin-migration
    ```
 
 3. **数据兼容性**: 现有的 `.requirements/` 目录完全兼容，无需迁移
@@ -152,7 +152,7 @@ kg-rebuild
 
 ```bash
 # 克隆仓库
-git clone https://github.com/zxc1213/claude-req-sys.git
+git clone https://github.com/zxc1213/claude-req-sys-plugin.git
 cd claude-req-sys
 
 # 本地测试
@@ -202,8 +202,8 @@ MIT License - 详见 [LICENSE](./LICENSE) 文件
 
 ## 🔗 相关链接
 
-- [GitHub 仓库](https://github.com/zxc1213/claude-req-sys)
-- [问题反馈](https://github.com/zxc1213/claude-req-sys/issues)
+- [GitHub 仓库](https://github.com/zxc1213/claude-req-sys-plugin)
+- [问题反馈](https://github.com/zxc1213/claude-req-sys-plugin/issues)
 - [更新日志](./CHANGELOG.md)
 
 ---

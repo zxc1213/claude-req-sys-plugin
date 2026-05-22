@@ -677,7 +677,7 @@ class RequirementFederation {
 - [Ruflo GitHub](https://github.com/ruvnet/ruflo)
 - [Ruflo 文档](https://flo.ruv.io/)
 - [GStack GitHub](https://github.com/garrytan/gstack)
-- [ClaudeReqSys GitHub](https://github.com/zxc1213/claude-req-sys)
+- [ClaudeReqSys GitHub](https://github.com/zxc1213/claude-req-sys-plugin
 - [Claude Code 文档](https://docs.anthropic.com/en/docs/claude-code)
 
 ---

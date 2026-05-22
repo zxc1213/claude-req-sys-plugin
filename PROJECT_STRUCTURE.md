@@ -394,39 +394,24 @@ mcp__code-review-graph__query_graph_tool
 
 ### ZRead - GitHub 代码阅读
 
-**ZRead** 是一个强大的 GitHub 代码阅读工具，可以快速浏览和分析远程仓库。
+**ZRead** 是一个强大的 GitHub 代码阅读 CLI 工具。
 
-**获取仓库结构**：
+**安装和使用**：详见 [https://zread.ai/cli](https://zread.ai/cli)
 
-```bash
-# 获取根目录结构
-mcp__zread__get_repo_structure
-  repo_name="zxc1213/claude-req-sys"
-  dir_path="/"
-
-# 获取特定目录
-mcp__zread__get_repo_structure
-  repo_name="zxc1213/claude-req-sys"
-  dir_path="/scripts/requirement-manager"
-```
-
-**读取文件内容**：
+**基本用法**：
 
 ```bash
-# 读取单个文件
-mcp__zread__read_file
-  repo_name="zxc1213/claude-req-sys"
-  file_path="scripts/requirement-manager/core/processor.js"
-```
+# 安装 zread CLI
+npm install -g @zread/cli
 
-**搜索代码文档**：
+# 获取仓库结构
+zread ls zxc1213/claude-req-sys
 
-```bash
-# 搜索关键词
-mcp__zread__search_doc
-  repo_name="zxc1213/claude-req-sys"
-  query="需求处理器"
-  language="zh"
+# 读取文件内容
+zread cat zxc1213/claude-req-sys:scripts/requirement-manager/core/processor.js
+
+# 搜索代码
+zread search zxc1213/claude-req-sys "需求处理器"
 ```
 
 ### 知识图谱 Wiki
@@ -484,169 +469,6 @@ cat .code-review-graph/wiki/optimization-generate.md
 | CLI 工具 | 7 个   |
 | 测试用例 | 142 个 |
 | 核心脚本 | 20+ 个 |
-
----
-
-## 🛠️ 开发工具使用指南
-
-### Code Review Graph - 代码知识图谱
-
-项目集成了 **code-review-graph**，提供基于代码依赖关系的智能分析和可视化。
-
-#### 构建知识图谱
-
-```bash
-# 完整重建（解析所有文件）
-mcp__code-review-graph__build_or_update_graph_tool
-  full_rebuild=true
-  repo_root="E:\\AI_Project\\ClaudeReqSys"
-
-# 增量更新（仅变更文件）
-mcp__code-review-graph__build_or_update_graph_tool
-  full_rebuild=false
-```
-
-#### 查询代码图谱
-
-```bash
-# 获取架构概览
-mcp__code-review-graph__get_architecture_overview_tool
-
-# 列出代码社区（按大小排序）
-mcp__code-review-graph__list_communities_tool
-  sort_by="size"
-
-# 查找代码实体
-mcp__code-review-graph__semantic_search_nodes_tool
-  query="需求处理器"
-  limit=10
-
-# 查询代码关系
-mcp__code-review-graph__query_graph_tool
-  pattern="callers_of"
-  target="Processor"
-```
-
-#### 分析执行流
-
-```bash
-# 列出所有执行流（按关键性排序）
-mcp__code-review-graph__list_flows_tool
-  sort_by="criticality"
-
-# 获取特定流程详情
-mcp__code-review-graph__get_flow_tool
-  flow_name="需求创建流程"
-  include_source=true
-```
-
-#### 知识图谱统计
-
-- **解析文件**: 49 个
-- **代码节点**: 536 个
-- **依赖关系**: 3990 条边
-- **代码社区**: 11 个
-- **执行流**: 57 个
-
-### ZRead - GitHub 代码阅读
-
-**ZRead** 是一个强大的 GitHub 代码阅读工具，可以快速浏览和分析远程仓库。
-
-#### 获取仓库结构
-
-```bash
-# 获取根目录结构
-mcp__zread__get_repo_structure
-  repo_name="zxc1213/claude-req-sys"
-  dir_path="/"
-
-# 获取特定目录
-mcp__zread__get_repo_structure
-  repo_name="zxc1213/claude-req-sys"
-  dir_path="/scripts/requirement-manager"
-```
-
-#### 读取文件内容
-
-```bash
-# 读取单个文件
-mcp__zread__read_file
-  repo_name="zxc1213/claude-req-sys"
-  file_path="scripts/requirement-manager/core/processor.js"
-```
-
-#### 搜索代码文档
-
-```bash
-# 搜索关键词
-mcp__zread__search_doc
-  repo_name="zxc1213/claude-req-sys"
-  query="需求处理器"
-  language="zh"
-```
-
-### 知识图谱 Wiki
-
-项目使用 code-review-graph 生成了 **12 个 Wiki 页面**，存储在 `.code-review-graph/wiki/` 目录。
-
-#### 查看 Wiki
-
-```bash
-# 列出所有 Wiki 页面
-ls .code-review-graph/wiki/
-
-# 查看特定社区的 Wiki
-cat .code-review-graph/wiki/optimization-generate.md
-```
-
-#### Wiki 内容
-
-- 每个代码社区的详细说明
-- 社区成员列表（类、函数）
-- 社区内聚度和依赖关系
-- 跨社区连接分析
-
----
-
-## 🚀 开发工作流
-
-### 代码分析流程
-
-使用 **code-review-graph** 和 **zread** 进行代码分析：
-
-```
-1. 构建知识图谱
-   ↓
-2. 查看架构概览
-   ↓
-3. 分析代码社区
-   ↓
-4. 查找关键节点
-   ↓
-5. 追踪依赖关系
-```
-
-### 远程代码阅读
-
-使用 **zread** 阅读 GitHub 仓库代码：
-
-```bash
-# 浏览项目结构
-mcp__zread__get_repo_structure
-  repo_name="zxc1213/claude-req-sys"
-  dir_path="/"
-
-# 阅读核心文件
-mcp__zread__read_file
-  repo_name="zxc1213/claude-req-sys"
-  file_path="scripts/requirement-manager/core/processor.js"
-
-# 搜索相关代码
-mcp__zread__search_doc
-  repo_name="zxc1213/claude-req-sys"
-  query="知识图谱"
-  language="zh"
-```
 
 ---
 

@@ -8,8 +8,8 @@
   "license": "MIT",
   "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
   "repository": "https://github.com/zxc1213/claude-req-sys-plugin",
-  "skills": "skills",
-  "commands": "commands",
+  "skills": ["skills"],
+  "commands": ["commands"],
   "bin": [
     "bin/claude-req-init",
     "bin/claude-req-update",

@@ -1,11 +1,13 @@
 {
   "name": "claude-req-sys",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "智能需求管理系统 - 从需求到测试的全流程自动化",
   "author": {
     "name": "19944"
   },
   "license": "MIT",
+  "skills": ["./skills/"],
+  "commands": ["./commands/"],
   "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
   "repository": "https://github.com/zxc1213/claude-req-sys-plugin"
 }

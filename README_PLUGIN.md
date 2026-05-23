@@ -4,7 +4,7 @@
 
 > **Claude Code 插件** - 智能需求管理系统，从需求到测试的全流程自动化
 
-[![Version](https://img.shields.io/badge/version-0.6.0-blue)](https://github.com/zxc1213/claude-req-sys-plugin)
+[![Version](https://img.shields.io/badge/version-0.7.2-blue)](https://github.com/zxc1213/claude-req-sys-plugin)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## 🚀 快速开始

@@ -14,7 +14,6 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import chalk from 'chalk';
 
 /**
  * 从 stdin 读取原始数据
@@ -60,13 +59,13 @@ async function main() {
       // 输出总结（只有当有记录时）
       if (lines > 0) {
         console.log();
-        console.log(chalk.cyan('═════════════════════════════════════════'));
-        console.log(chalk.bold('           需求执行总结'));
-        console.log(chalk.cyan('═════════════════════════════════════════'));
+        console.log('═════════════════════════════════════════');
+        console.log('           需求执行总结');
+        console.log('═════════════════════════════════════════');
         console.log();
-        console.log(chalk.gray(`活跃需求: ${target}`));
-        console.log(chalk.gray(`执行操作: ${lines} 条记录`));
-        console.log(chalk.cyan('═════════════════════════════════════════'));
+        console.log(`活跃需求: ${target}`);
+        console.log(`执行操作: ${lines} 条记录`);
+        console.log('═════════════════════════════════════════');
         console.log();
       }
     } catch (err) {

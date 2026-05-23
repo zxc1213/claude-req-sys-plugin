@@ -1,4 +1,5 @@
-import fs from 'fs-extra';
+import fs from 'fs';
+import { mkdirSync, writeFileSync, existsSync, rmSync } from 'fs';
 import path from 'path';
 import { SessionManager } from './session-manager.js';
 import { ContentFormatter } from './formatter.js';
@@ -36,7 +37,7 @@ export class ConversationLogger {
       const day = date.slice(6, 8);
 
       const sessionDir = path.join(this.baseDir, year, month, day);
-      await fs.ensureDir(sessionDir);
+      mkdirSync(sessionDir, { recursive: true });
     }
 
     this.sessionManager.createSession(this.currentSessionId, metadata);
@@ -136,17 +137,17 @@ export class ConversationLogger {
 
     // 格式化并保存
     const doc = this.formatter.formatDocument(session);
-    await fs.writeFile(filepath, doc, 'utf8');
+    writeFileSync(filepath, doc, 'utf8');
 
     // 保存元数据
     const metaPath = filepath.replace('.md', '.meta.json');
-    await fs.writeJSON(metaPath, {
+    writeFileSync(metaPath, JSON.stringify({
       id: this.currentSessionId,
       ...session.metadata,
       startTime: session.startTime,
       endTime: session.endTime,
       eventCount: session.events.length,
-    });
+    }, null, 2));
 
     const result = {
       filepath,

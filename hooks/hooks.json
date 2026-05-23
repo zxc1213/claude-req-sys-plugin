@@ -1,3 +1,70 @@
 {
-  "hooks": {}
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const p=require('path'),f=require('fs'),h=require('os').homedir();const r=(()=>{const e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim()){const c=p.resolve(e.trim());if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}const d=p.join(h(),'.claude'),s=[p.join(d,'plugins/marketplaces/claude-req-sys/plugins/claude-req-sys')];for(const c of s){if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}try{const b=p.join(d,'plugins/cache/claude-req-sys/claude-req-sys');if(f.existsSync(b)){for(const o of f.readdirSync(b,{withFileTypes:true}))for(const v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){const c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}}}catch(x){}return p.resolve('scripts/hooks/plugin-hook-bootstrap.js','..','..')}();process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.js'))\" scripts/conversation-logger/hooks/session-start.js",
+            "timeout": 5
+          }
+        ],
+        "description": "初始化对话记录器",
+        "id": "conv:session:start"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const p=require('path'),f=require('fs'),h=require('os').homedir();const r=(()=>{const e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim()){const c=p.resolve(e.trim());if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}const d=p.join(h(),'.claude'),s=[p.join(d,'plugins/marketplaces/claude-req-sys/plugins/claude-req-sys')];for(const c of s){if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}try{const b=p.join(d,'plugins/cache/claude-req-sys/claude-req-sys');if(f.existsSync(b)){for(const o of f.readdirSync(b,{withFileTypes:true}))for(const v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){const c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}}}catch(x){}return p.resolve('scripts/hooks/plugin-hook-bootstrap.js','..','..')}();process.env.CLADE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.js'))\" scripts/hooks/post-req-update.js",
+            "timeout": 10
+          }
+        ],
+        "description": "更新需求记录",
+        "id": "post:req:update"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const p=require('path'),f=require('fs'),h=require('os').homedir();const r=(()=>{const e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim()){const c=p.resolve(e.trim());if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}const d=p.join(h(),'.claude'),s=[p.join(d,'plugins/marketplaces/claude-req-sys/plugins/claude-req-sys')];for(const c of s){if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}try{const b=p.join(d,'plugins/cache/claude-req-sys/claude-req-sys');if(f.existsSync(b)){for(const o of f.readdirSync(b,{withFileTypes:true}))for(const v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){const c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}}}catch(x){}return p.resolve('scripts/hooks/plugin-hook-bootstrap.js','..','..')}();process.env.CLADE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.js'))\" scripts/conversation-logger/hooks/post-tool-use.js",
+            "timeout": 5
+          }
+        ],
+        "description": "记录工具调用",
+        "id": "conv:post:tool:use"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const p=require('path'),f=require('fs'),h=require('os').homedir();const r=(()=>{const e=process.env.CLADE_PLUGIN_ROOT;if(e&&e.trim()){const c=p.resolve(e.trim());if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}const d=p.join(h(),'.claude'),s=[p.join(d,'plugins/marketplaces/claude-req-sys/plugins/claude-req-sys')];for(const c of s){if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}try{const b=p.join(d,'plugins/cache/claude-req-sys/claude-req-sys');if(f.existsSync(b)){for(const o of f.readdirSync(b,{withFileTypes:true}))for(const v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){const c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}}}catch(x){}return p.resolve('scripts/hooks/plugin-hook-bootstrap.js','..','..')}();process.env.CLADE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.js'))\" scripts/hooks/stop-req-summary.js",
+            "timeout": 10
+          }
+        ],
+        "description": "生成需求执行总结",
+        "id": "stop:req:summary"
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const p=require('path'),f=require('fs'),h=require('os').homedir();const r=(()=>{const e=process.env.CLAUDE_PLUGIN_ROOT;if(e&&e.trim()){const c=p.resolve(e.trim());if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}const d=p.join(h(),'.claude'),s=[p.join(d,'plugins/marketplaces/claude-req-sys/plugins/claude-req-sys')];for(const c of s){if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}try{const b=p.join(d,'plugins/cache/claude-req-sys/claude-req-sys');if(f.existsSync(b)){for(const o of f.readdirSync(b,{withFileTypes:true}))for(const v of f.readdirSync(p.join(b,o.name),{withFileTypes:true})){const c=p.join(b,o.name,v.name);if(f.existsSync(p.join(c,'scripts/hooks/plugin-hook-bootstrap.js')))return c}}}catch(x){}return p.resolve('scripts/hooks/plugin-hook-bootstrap.js','..','..')}();process.env.CLADE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.js'))\" scripts/conversation-logger/hooks/stop.js",
+            "timeout": 5
+          }
+        ],
+        "description": "保存对话记录",
+        "id": "conv:stop"
+      }
+    ]
+  }
 }

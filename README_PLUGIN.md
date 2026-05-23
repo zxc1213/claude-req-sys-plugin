@@ -197,14 +197,7 @@ claude-req-sys/
 
 ## ⚙️ 配置
 
-插件会自动设置以下环境变量：
-
-- `CLAUDE_REQ_SYS`: 插件根目录路径
-
-Hooks 自动生效：
-
-- `PostToolUse`: 记录工具调用到需求日志
-- `Stop`: 生成需求执行总结
+Marketplace 安装后即可使用，无需额外配置。
 
 ## 🤝 贡献
 

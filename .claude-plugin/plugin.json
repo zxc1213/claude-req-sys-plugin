@@ -7,10 +7,5 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
-  "repository": "https://github.com/zxc1213/claude-req-sys-plugin",
-  "settings": {
-    "env": {
-      "CLAUDE_REQ_SYS": "{{PLUGIN_DIR}}"
-    }
-  }
+  "repository": "https://github.com/zxc1213/claude-req-sys-plugin"
 }

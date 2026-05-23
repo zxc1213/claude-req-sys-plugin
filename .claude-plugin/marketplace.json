@@ -1,0 +1,45 @@
+{
+  "marketplace": "claude-req-sys",
+  "owner": {
+    "name": "19944",
+    "contact": "https://github.com/zxc1213"
+  },
+  "plugins": [
+    {
+      "name": "claude-req-sys",
+      "displayName": "ClaudeReqSys",
+      "description": "智能需求管理系统 - 从需求到测试的全流程自动化，集成深度需求分析",
+      "version": "0.7.0",
+      "author": "19944",
+      "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/zxc1213/claude-req-sys-plugin.git"
+      },
+      "license": "MIT",
+      "source": {
+        "type": "git-subdir",
+        "url": "https://github.com/zxc1213/claude-req-sys-plugin.git",
+        "subdir": "/",
+        "branch": "feature/plugin-migration"
+      },
+      "keywords": [
+        "requirements",
+        "management",
+        "brainstorming",
+        "testing",
+        "knowledge-graph",
+        "质量门禁",
+        "优先级评估",
+        "深度分析"
+      ],
+      "category": "development",
+      "tags": [
+        "project-management",
+        "documentation",
+        "testing",
+        "workflow"
+      ]
+    }
+  ]
+}

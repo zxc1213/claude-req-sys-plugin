@@ -11,26 +11,26 @@
 
 ### 安装
 
-**从 GitHub 分支安装**（推荐）:
+**从 GitHub 安装**（推荐）:
 
 ```bash
-# 从 feature/plugin-migration 分支安装插件版本
-/plugin install https://github.com/zxc1213/claude-req-sys-plugin/tree/feature/plugin-migration
+# 克隆仓库到本地
+git clone https://github.com/zxc1213/claude-req-sys-plugin.git
+cd claude-req-sys-plugin
 
-# 或者使用 git+ 协议指定分支
-/plugin install git+https://github.com/zxc1213/claude-req-sys-plugin.git#feature/plugin-migration
-
-# 或者使用 ssh 协议（如果你有写权限）
-/plugin install git+ssh://git@github.com/zxc1213/claude-req-sys-plugin.git#feature/plugin-migration
+# 使用 cc 命令加载插件（本地开发模式）
+cc --plugin-dir .
 ```
 
-**本地测试**:
+**从指定分支安装**:
 
 ```bash
-# 克隆仓库后本地测试
-git clone https://github.com/zxc1213/claude-req-sys-plugin.git
-cd claude-req-sys
-claude --plugin-dir .
+# 克隆指定分支
+git clone -b feature/plugin-migration https://github.com/zxc1213/claude-req-sys-plugin.git
+cd claude-req-sys-plugin
+
+# 加载插件
+cc --plugin-dir .
 ```
 
 **团队内私有安装**:
@@ -38,8 +38,12 @@ claude --plugin-dir .
 如果你们使用私有的 GitHub 仓库：
 
 ```bash
-# 从私有仓库安装
-/plugin install https://github.com/your-org/claude-req-sys
+# 克隆私有仓库
+git clone https://github.com/your-org/claude-req-sys-plugin.git
+cd claude-req-sys-plugin
+
+# 加载插件
+cc --plugin-dir .
 ```
 
 ### 核心功能

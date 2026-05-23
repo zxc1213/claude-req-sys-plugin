@@ -30,7 +30,7 @@
 npm install -g github:zxc1213/claude-req-sys
 
 # 克隆安装
-git clone https://github.com/zxc1213/claude-req-sys.git claude-req-sys
+git clone https://github.com/zxc1213/claude-req-sys-plugin.git claude-req-sys
 cd claude-req-sys
 npm install -g .
 ```

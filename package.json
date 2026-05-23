@@ -23,12 +23,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zxc1213/claude-req-sys.git"
+    "url": "https://github.com/zxc1213/claude-req-sys-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/zxc1213/claude-req-sys/issues"
+    "url": "https://github.com/zxc1213/claude-req-sys-plugin/issues"
   },
-  "homepage": "https://github.com/zxc1213/claude-req-sys#readme",
+  "homepage": "https://github.com/zxc1213/claude-req-sys-plugin#readme",
   "bin": {
     "claude-req-init": "bin/claude-req-init.js",
     "claude-req-update": "bin/claude-req-update.js",

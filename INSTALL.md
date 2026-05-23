@@ -53,31 +53,12 @@ kg-stats
 
 ## 🔧 团队私有安装
 
-如果你的团队使用私有 GitHub 仓库或独立分支：
+如果你的团队使用私有 GitHub 仓库：
 
 ```bash
-# 从特定分支安装
-/plugin install https://github.com/your-org/claude-req-sys/tree/feature/plugin-migration
-
-# 或考虑创建独立的插件仓库
+# 从你的团队仓库安装
 /plugin install https://github.com/your-org/claude-req-sys-plugin
 ```
-
-## 💡 建议：创建独立的插件仓库
-
-为了避免版本冲突，建议考虑：
-
-1. **创建独立的插件仓库**: `claude-req-sys-plugin`
-   - 优点：清晰分离 npm 版本和插件版本
-   - 缺点：需要维护两个仓库
-
-2. **使用分支隔离**（当前方案）
-   - 优点：单一仓库，便于管理
-   - 缺点：安装时需要指定分支
-
-3. **使用 Git Tag 标记插件版本**
-   - 在 feature/plugin-migration 分支创建 tag
-   - 安装时使用 tag：`git+https://github.com/zxc1213/claude-req-sys.git#v0.6.0-plugin`
 
 ## 📝 从 npm 版本迁移
 
@@ -87,8 +68,8 @@ kg-stats
 # 1. 卸载 npm 版本
 npm uninstall -g claude-req-sys
 
-# 2. 从 feature/plugin-migration 分支安装插件版本
-/plugin install https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+# 2. 从新插件仓库安装
+/plugin install https://github.com/zxc1213/claude-req-sys-plugin
 
 # 3. 验证数据兼容性（现有 .requirements/ 目录无需迁移）
 /req --dashboard
@@ -105,9 +86,9 @@ npm uninstall -g claude-req-sys
 **A**:
 
 ```bash
-/plugin update claude-req-sys
+/plugin update claude-req-sys-plugin
 # 或重新安装
-/plugin install --force https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+/plugin install --force https://github.com/zxc1213/claude-req-sys-plugin
 ```
 
 ### Q: 如何卸载插件？
@@ -120,5 +101,5 @@ npm uninstall -g claude-req-sys
 
 ## 📚 更多信息
 
-- [完整文档](https://github.com/zxc1213/claude-req-sys/blob/main/README_PLUGIN.md)
-- [问题反馈](https://github.com/zxc1213/claude-req-sys/issues)
+- [完整文档](https://github.com/zxc1213/claude-req-sys-plugin/blob/main/README_PLUGIN.md)
+- [问题反馈](https://github.com/zxc1213/claude-req-sys-plugin/issues)

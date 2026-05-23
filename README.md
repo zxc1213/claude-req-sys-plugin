@@ -4,14 +4,33 @@
 
 ## ⚡ 快速开始
 
-### Claude Code 插件安装
+### 方式一：Marketplace 安装（推荐）⭐
 
 ```bash
-# 从 feature/plugin-migration 分支安装
-/plugin install https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+# 1. 添加 Marketplace
+/plugin marketplace add zxc1213/claude-req-sys-marketplace
 
-# 安装后直接使用
+# 2. 安装插件
+/plugin install claude-req-sys@claude-req-sys
+
+# 3. 开始使用
 /req 添加新功能
+```
+
+**优势**：
+
+- ✅ 集中管理，易于更新
+- ✅ 支持版本控制
+- ✅ 自动检查更新
+- ✅ 符合 Claude Code 官方标准
+
+**详细文档**：[Marketplace 安装指南](marketplace-setup/INSTALL.md)
+
+### 方式二：直接安装
+
+```bash
+# 从 GitHub 直接安装
+/plugin install https://github.com/zxc1213/claude-req-sys-plugin
 ```
 
 **优势**：
@@ -22,8 +41,6 @@
 - ✅ 支持插件版本管理和更新
 
 **详细文档**：[README_PLUGIN.md](README_PLUGIN.md) | [安装指南](INSTALL.md)
-
-## 🚀 特性
 
 - 📋 **多类型支持**：新功能、Bug 修复、技术问题、需求调整、重构
 - 🤖 **智能自动化**：集成 brainstorming、systematic-debugging 等 skills
@@ -45,9 +62,9 @@
 ## 🔄 更新方式
 
 ```bash
-/plugin update claude-req-sys
+/plugin update claude-req-sys-plugin
 # 或重新安装
-/plugin install --force https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+/plugin install --force https://github.com/zxc1213/claude-req-sys-plugin
 ```
 
 ## 使用
@@ -206,8 +223,8 @@ your-project/
 ### 快速开始
 
 ```bash
-git clone https://github.com/zxc1213/claude-req-sys.git
-cd claude-req-sys
+git clone https://github.com/zxc1213/claude-req-sys-plugin.git
+cd claude-req-sys-plugin
 npm install
 ```
 
@@ -272,8 +289,8 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 联系方式
 
-- GitHub: [zxc1213/claude-req-sys](https://github.com/zxc1213/claude-req-sys)
-- Issues: [GitHub Issues](https://github.com/zxc1213/claude-req-sys/issues)
+- GitHub: [zxc1213/claude-req-sys-plugin](https://github.com/zxc1213/claude-req-sys-plugin)
+- Issues: [GitHub Issues](https://github.com/zxc1213/claude-req-sys-plugin/issues)
 
 ---
 

@@ -68,7 +68,7 @@ npm install -g github:zxc1213/claude-req-sys
   "homepage": "https://github.com/zxc1213/claude-req-sys",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zxc1213/claude-req-sys.git"
+    "url": "https://github.com/zxc1213/claude-req-sys-plugin.git"
   },
   "skills": [
     "req-manager",

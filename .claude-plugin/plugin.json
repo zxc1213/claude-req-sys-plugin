@@ -7,16 +7,5 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
-  "repository": "https://github.com/zxc1213/claude-req-sys-plugin",
-  "skills": ["./skills"],
-  "commands": ["./commands"],
-  "bin": [
-    "./bin/claude-req-init",
-    "./bin/claude-req-update",
-    "./bin/kg-search",
-    "./bin/kg-stats",
-    "./bin/kg-connections",
-    "./bin/kg-recommend",
-    "./bin/kg-rebuild"
-  ]
+  "repository": "https://github.com/zxc1213/claude-req-sys-plugin"
 }

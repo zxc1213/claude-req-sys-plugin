@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"var p=require('path'),f=require('fs'),d=p.join(require('os').homedir(),'.claude'),s=[p.join(d,'plugins/marketplaces/crs/plugins/crs'),p.join(d,'plugins/cache/crs')],r='';for(var i of s){if(f.existsSync(i)){r=i;break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.cjs'))\" scripts/conversation-logger/hooks/session-start.js",
+            "command": "node -e \"var p=require('path'),f=require('fs'),b='scripts/hooks/plugin-hook-bootstrap.cjs',d=p.join(require('os').homedir(),'.claude'),r='',t=[p.join(d,'plugins/marketplaces/crs/plugins/crs')];try{var c=p.join(d,'plugins/cache/crs/crs');if(f.existsSync(c))f.readdirSync(c).forEach(function(v){var vp=p.join(c,v);if(!r&&f.statSync(vp).isDirectory()&&f.existsSync(p.join(vp,b)))r=vp})}catch(e){}if(!r)for(var i=0;i<t.length;i++){if(f.existsSync(p.join(t[i],b))){r=t[i];break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,b))\" scripts/conversation-logger/hooks/session-start.js",
             "timeout": 5
           }
         ],
@@ -20,7 +20,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"var p=require('path'),f=require('fs'),d=p.join(require('os').homedir(),'.claude'),s=[p.join(d,'plugins/marketplaces/crs/plugins/crs'),p.join(d,'plugins/cache/crs')],r='';for(var i of s){if(f.existsSync(i)){r=i;break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.cjs'))\" scripts/hooks/post-req-update.js",
+            "command": "node -e \"var p=require('path'),f=require('fs'),b='scripts/hooks/plugin-hook-bootstrap.cjs',d=p.join(require('os').homedir(),'.claude'),r='',t=[p.join(d,'plugins/marketplaces/crs/plugins/crs')];try{var c=p.join(d,'plugins/cache/crs/crs');if(f.existsSync(c))f.readdirSync(c).forEach(function(v){var vp=p.join(c,v);if(!r&&f.statSync(vp).isDirectory()&&f.existsSync(p.join(vp,b)))r=vp})}catch(e){}if(!r)for(var i=0;i<t.length;i++){if(f.existsSync(p.join(t[i],b))){r=t[i];break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,b))\" scripts/hooks/post-req-update.js",
             "timeout": 10
           }
         ],
@@ -32,7 +32,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"var p=require('path'),f=require('fs'),d=p.join(require('os').homedir(),'.claude'),s=[p.join(d,'plugins/marketplaces/crs/plugins/crs'),p.join(d,'plugins/cache/crs')],r='';for(var i of s){if(f.existsSync(i)){r=i;break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.cjs'))\" scripts/conversation-logger/hooks/post-tool-use.js",
+            "command": "node -e \"var p=require('path'),f=require('fs'),b='scripts/hooks/plugin-hook-bootstrap.cjs',d=p.join(require('os').homedir(),'.claude'),r='',t=[p.join(d,'plugins/marketplaces/crs/plugins/crs')];try{var c=p.join(d,'plugins/cache/crs/crs');if(f.existsSync(c))f.readdirSync(c).forEach(function(v){var vp=p.join(c,v);if(!r&&f.statSync(vp).isDirectory()&&f.existsSync(p.join(vp,b)))r=vp})}catch(e){}if(!r)for(var i=0;i<t.length;i++){if(f.existsSync(p.join(t[i],b))){r=t[i];break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,b))\" scripts/conversation-logger/hooks/post-tool-use.js",
             "timeout": 5
           }
         ],
@@ -46,7 +46,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"var p=require('path'),f=require('fs'),d=p.join(require('os').homedir(),'.claude'),s=[p.join(d,'plugins/marketplaces/crs/plugins/crs'),p.join(d,'plugins/cache/crs')],r='';for(var i of s){if(f.existsSync(i)){r=i;break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.cjs'))\" scripts/hooks/stop-req-summary.js",
+            "command": "node -e \"var p=require('path'),f=require('fs'),b='scripts/hooks/plugin-hook-bootstrap.cjs',d=p.join(require('os').homedir(),'.claude'),r='',t=[p.join(d,'plugins/marketplaces/crs/plugins/crs')];try{var c=p.join(d,'plugins/cache/crs/crs');if(f.existsSync(c))f.readdirSync(c).forEach(function(v){var vp=p.join(c,v);if(!r&&f.statSync(vp).isDirectory()&&f.existsSync(p.join(vp,b)))r=vp})}catch(e){}if(!r)for(var i=0;i<t.length;i++){if(f.existsSync(p.join(t[i],b))){r=t[i];break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,b))\" scripts/hooks/stop-req-summary.js",
             "timeout": 10
           }
         ],
@@ -58,7 +58,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"var p=require('path'),f=require('fs'),d=p.join(require('os').homedir(),'.claude'),s=[p.join(d,'plugins/marketplaces/crs/plugins/crs'),p.join(d,'plugins/cache/crs')],r='';for(var i of s){if(f.existsSync(i)){r=i;break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,'scripts/hooks/plugin-hook-bootstrap.cjs'))\" scripts/conversation-logger/hooks/stop.js",
+            "command": "node -e \"var p=require('path'),f=require('fs'),b='scripts/hooks/plugin-hook-bootstrap.cjs',d=p.join(require('os').homedir(),'.claude'),r='',t=[p.join(d,'plugins/marketplaces/crs/plugins/crs')];try{var c=p.join(d,'plugins/cache/crs/crs');if(f.existsSync(c))f.readdirSync(c).forEach(function(v){var vp=p.join(c,v);if(!r&&f.statSync(vp).isDirectory()&&f.existsSync(p.join(vp,b)))r=vp})}catch(e){}if(!r)for(var i=0;i<t.length;i++){if(f.existsSync(p.join(t[i],b))){r=t[i];break}}if(!r)r=p.resolve('.');process.env.CLAUDE_PLUGIN_ROOT=r;require(p.join(r,b))\" scripts/conversation-logger/hooks/stop.js",
             "timeout": 5
           }
         ],

@@ -4,13 +4,13 @@
 
 ### 1. 创建新的 GitHub 仓库
 
-创建名为 `claude-req-sys-marketplace` 的新仓库。
+创建名为 `crs-marketplace` 的新仓库。
 
 ### 2. 创建目录结构
 
 ```bash
-mkdir claude-req-sys-marketplace
-cd claude-req-sys-marketplace
+mkdir crs-marketplace
+cd crs-marketplace
 mkdir .claude-plugin
 ```
 
@@ -31,10 +31,10 @@ cp marketplace-setup/README.md ./
 ```bash
 git init
 git add .
-git commit -m "feat: initial marketplace setup for claude-req-sys"
+git commit -m "feat: initial marketplace setup for crs"
 
 # 添加远程仓库
-git remote add origin https://github.com/zxc1213/claude-req-sys-marketplace.git
+git remote add origin https://github.com/zxc1213/crs-marketplace.git
 
 # 推送到 GitHub
 git push -u origin main
@@ -46,12 +46,12 @@ git push -u origin main
 
 ```bash
 # 添加 marketplace（两种方式都可以）
-/plugin marketplace add https://github.com/zxc1213/claude-req-sys-marketplace.git
+/plugin marketplace add https://github.com/zxc1213/crs-marketplace.git
 # 或
-/plugin marketplace add zxc1213/claude-req-sys-marketplace
+/plugin marketplace add zxc1213/crs-marketplace
 
 # 安装插件
-/plugin install claude-req-sys@claude-req-sys
+/plugin install crs@crs
 ```
 
 ### 更新 marketplace
@@ -60,10 +60,10 @@ git push -u origin main
 
 1. 编辑 `.claude-plugin/marketplace.json`
 2. 提交并推送到 GitHub
-3. 用户运行 `/plugin marketplace update claude-req-sys`
+3. 用户运行 `/plugin marketplace update crs`
 
 ## 注意事项
 
 - Marketplace 仓库只包含配置文件，不包含插件代码
-- 插件代码在单独的仓库中（claude-req-sys-plugin）
+- 插件代码在单独的仓库中（crs-plugin）
 - marketplace.json 中的 `source.repo` 指向实际的插件仓库

@@ -27,7 +27,7 @@ function resolvePluginRoot() {
   const claudeDir = path.join(home, '.claude');
 
   const searchPaths = [
-    path.join(claudeDir, 'plugins', 'marketplaces', 'claude-req-sys', 'plugins', 'claude-req-sys'),
+    path.join(claudeDir, 'plugins', 'marketplaces', 'crs', 'plugins', 'crs'),
   ];
 
   for (const candidate of searchPaths) {
@@ -37,7 +37,7 @@ function resolvePluginRoot() {
   }
 
   try {
-    const cacheBase = path.join(claudeDir, 'plugins', 'cache', 'claude-req-sys');
+    const cacheBase = path.join(claudeDir, 'plugins', 'cache', 'crs');
     if (fs.existsSync(cacheBase)) {
       for (const org of fs.readdirSync(cacheBase, { withFileTypes: true })) {
         if (!org.isDirectory()) continue;
@@ -51,8 +51,7 @@ function resolvePluginRoot() {
         }
       }
     }
-  } catch {
-  }
+  } catch {}
 
   return path.resolve(__dirname, '..', '..');
 }

@@ -18,7 +18,7 @@ const ROOT = path.dirname(__dirname);
 // 检查版本参数
 if (process.argv.includes('--version') || process.argv.includes('-v')) {
   const packageJson = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
-  console.log(`claude-req-sys v${packageJson.version}`);
+  console.log(`crs v${packageJson.version}`);
   process.exit(0);
 }
 
@@ -32,7 +32,7 @@ if (needsGlobalSetup) {
 
   try {
     // 获取包安装位置
-    const packageJsonPath = require.resolve('claude-req-sys/package.json');
+    const packageJsonPath = require.resolve('crs/package.json');
     const pkgDir = path.dirname(packageJsonPath);
 
     // 创建全局目录
@@ -111,7 +111,7 @@ if (needsGlobalSetup) {
   } catch (error) {
     console.error('❌ 全局配置安装失败:', error.message);
     console.log('\n您可以手动运行安装脚本:');
-    console.log('  cd claude-req-sys');
+    console.log('  cd crs');
     console.log('  bash install.sh\n');
   }
 }

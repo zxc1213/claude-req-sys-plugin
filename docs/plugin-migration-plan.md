@@ -1,8 +1,8 @@
-# ClaudeReqSys 插件改造方案
+# CRS 插件改造方案
 
 > **版本**: v1.0  
 > **创建时间**: 2026-05-22  
-> **目标**: 将 ClaudeReqSys 从 npm 全局包改造为 Claude Code 插件
+> **目标**: 将 CRS 从 npm 全局包改造为 Claude Code 插件
 
 ---
 
@@ -33,9 +33,9 @@
 **安装前** (npm 全局包):
 
 ```bash
-npm install -g github:zxc1213/claude-req-sys
+npm install -g github:zxc1213/crs
 # 运行 postinstall 脚本
-# 复制文件到 ~/.claude/claude-req-sys/
+# 复制文件到 ~/.claude/crs/
 # 创建符号链接
 # 手动合并 hooks 配置
 ```
@@ -43,7 +43,7 @@ npm install -g github:zxc1213/claude-req-sys
 **安装后** (插件):
 
 ```bash
-/plugin install claude-req-sys
+/plugin install crs
 # 自动加载所有 skills、commands、hooks
 # CLI 工具自动添加到 PATH
 ```
@@ -60,15 +60,15 @@ npm install -g github:zxc1213/claude-req-sys
 
 ```json
 {
-  "name": "claude-req-sys",
+  "name": "crs",
   "version": "0.6.0",
   "description": "智能需求管理系统 - 从需求到测试的全流程自动化",
   "author": "19944",
   "license": "MIT",
-  "homepage": "https://github.com/zxc1213/claude-req-sys",
+  "homepage": "https://github.com/zxc1213/crs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zxc1213/claude-req-sys-plugin.git"
+    "url": "https://github.com/zxc1213/crs-plugin.git"
   },
   "skills": [
     "req-manager",
@@ -215,7 +215,7 @@ commands/
 **旧路径**:
 
 ```
-node ~/.claude/claude-req-sys/scripts/requirement-manager/index.js
+node ~/.claude/crs/scripts/requirement-manager/index.js
 ```
 
 **新路径** (使用插件环境变量):
@@ -289,7 +289,7 @@ const PLUGIN_DIR = process.env.CLAUDE_REQ_SYS || process.cwd();
 
 | 旧路径                      | 新路径                |
 | --------------------------- | --------------------- |
-| `~/.claude/claude-req-sys/` | `{{CLAUDE_REQ_SYS}}/` |
+| `~/.claude/crs/` | `{{CLAUDE_REQ_SYS}}/` |
 | `process.env.HOME/.claude/` | `{{CLAUDE_DATA}}/`    |
 
 ### 阶段 6: Bin 工具适配
@@ -331,9 +331,9 @@ const PLUGIN_DIR = process.env.CLAUDE_REQ_SYS ||
 
 ```json
 {
-  "name": "claude-req-sys-plugin",
+  "name": "crs-plugin",
   "version": "0.6.0",
-  "description": "ClaudeReqSys Plugin - 智能需求管理系统",
+  "description": "CRS Plugin - 智能需求管理系统",
   "type": "module",
   "files": [".claude-plugin/", "skills/", "commands/", "hooks/", "scripts/", "bin/", "README.md"],
   "keywords": ["claude-code", "plugin", "requirement-management"],
@@ -361,15 +361,15 @@ const PLUGIN_DIR = process.env.CLAUDE_REQ_SYS ||
 | 更新方式    | `npm install -g @latest`    | `/plugin update`                    |
 | 卸载命令    | `npm uninstall -g`          | `/plugin uninstall`                 |
 | 配置合并    | 手动合并 hooks.json         | 自动合并                            |
-| Skills 调用 | `/req-manager`              | `/claude-req-sys:req-manager`       |
+| Skills 调用 | `/req-manager`              | `/crs:req-manager`       |
 | 环境变量    | 手动设置                    | 自动设置                            |
-| 文件位置    | `~/.claude/claude-req-sys/` | `~/.claude/plugins/claude-req-sys/` |
+| 文件位置    | `~/.claude/crs/` | `~/.claude/plugins/crs/` |
 
 ### 目录结构对比
 
 ```
 npm 全局包:
-claude-req-sys/
+crs/
 ├── src/
 │   ├── claude/
 │   │   ├── commands/
@@ -383,7 +383,7 @@ claude-req-sys/
 └── package.json
 
 插件:
-claude-req-sys/
+crs/
 ├── .claude-plugin/
 │   └── plugin.json
 ├── skills/

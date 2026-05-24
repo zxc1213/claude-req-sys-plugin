@@ -16,7 +16,7 @@ const ROOT = path.dirname(__dirname);
 // 检查版本参数
 if (process.argv.includes('--version') || process.argv.includes('-v')) {
   const packageJson = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
-  console.log(`claude-req-sys v${packageJson.version}`);
+  console.log(`crs v${packageJson.version}`);
   process.exit(0);
 }
 

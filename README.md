@@ -1,4 +1,4 @@
-# ClaudeReqSys - 智能需求管理系统
+# CRS - 智能需求管理系统
 
 智能需求管理与自动化执行系统，为 Claude Code 提供从需求到测试的全流程管理能力。
 
@@ -8,10 +8,10 @@
 
 ```bash
 # 1. 添加 Marketplace
-/plugin marketplace add zxc1213/claude-req-sys-marketplace
+/plugin marketplace add zxc1213/crs-marketplace
 
 # 2. 安装插件
-/plugin install claude-req-sys@claude-req-sys
+/plugin install crs@crs
 
 # 3. 开始使用
 /r 添加新功能
@@ -30,7 +30,7 @@
 
 ```bash
 # 从 GitHub 直接安装
-/plugin install https://github.com/zxc1213/claude-req-sys-plugin
+/plugin install https://github.com/zxc1213/crs-plugin
 ```
 
 - 📋 **多类型支持**：新功能、Bug 修复、技术问题、需求调整、重构
@@ -53,13 +53,13 @@
 ## 🔄 更新插件
 
 ```bash
-/plugin update claude-req-sys@claude-req-sys
+/plugin update crs@crs
 ```
 
 ## 📝 卸载插件
 
 ```bash
-/plugin remove claude-req-sys@claude-req-sys
+/plugin remove crs@crs
 ```
 
 ## 使用
@@ -144,7 +144,7 @@ kg-rebuild                   # 重建知识图谱索引
 ## 📁 项目结构
 
 ```
-claude-req-sys/
+crs/
 ├── .claude-plugin/             # 插件清单
 │   └── plugin.json             # 插件配置文件
 ├── skills/                     # Skills（12个）
@@ -228,8 +228,8 @@ your-project/
 ### 快速开始
 
 ```bash
-git clone https://github.com/zxc1213/claude-req-sys-plugin.git
-cd claude-req-sys-plugin
+git clone https://github.com/zxc1213/crs-plugin.git
+cd crs-plugin
 npm install
 ```
 
@@ -294,8 +294,8 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 联系方式
 
-- GitHub: [zxc1213/claude-req-sys-plugin](https://github.com/zxc1213/claude-req-sys-plugin)
-- Issues: [GitHub Issues](https://github.com/zxc1213/claude-req-sys-plugin/issues)
+- GitHub: [zxc1213/crs-plugin](https://github.com/zxc1213/crs-plugin)
+- Issues: [GitHub Issues](https://github.com/zxc1213/crs-plugin/issues)
 
 ---
 

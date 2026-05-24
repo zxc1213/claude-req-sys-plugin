@@ -1,6 +1,6 @@
-# ClaudeReqSys Marketplace
+# CRS Marketplace
 
-这是 ClaudeReqSys 插件的 marketplace 仓库，用于分发和安装插件。
+这是 CRS 插件的 marketplace 仓库，用于分发和安装插件。
 
 ## 快速开始
 
@@ -9,13 +9,13 @@
 **使用 GitHub URL（推荐）**：
 
 ```bash
-/plugin marketplace add https://github.com/zxc1213/claude-req-sys-marketplace.git
+/plugin marketplace add https://github.com/zxc1213/crs-marketplace.git
 ```
 
 **或使用 owner/repo 格式**：
 
 ```bash
-/plugin marketplace add zxc1213/claude-req-sys-marketplace
+/plugin marketplace add zxc1213/crs-marketplace
 ```
 
 ### 安装插件
@@ -23,13 +23,13 @@
 添加 marketplace 后，安装插件：
 
 ```bash
-/plugin install claude-req-sys@claude-req-sys
+/plugin install crs@crs
 ```
 
 ## 仓库结构
 
 ```
-claude-req-sys-marketplace/
+crs-marketplace/
 └── .claude-plugin/
     └── marketplace.json    # Marketplace 配置文件
 ```
@@ -48,19 +48,19 @@ claude-req-sys-marketplace/
 
 ```bash
 # 更新 marketplace
-/plugin marketplace update claude-req-sys
+/plugin marketplace update crs
 
 # 更新已安装的插件
-/plugin update claude-req-sys@claude-req-sys
+/plugin update crs@crs
 ```
 
 ## 移除 Marketplace
 
 ```bash
-/plugin marketplace remove claude-req-sys
+/plugin marketplace remove crs
 ```
 
 ## 相关链接
 
-- **插件仓库**: https://github.com/zxc1213/claude-req-sys-plugin
-- **问题反馈**: https://github.com/zxc1213/claude-req-sys-plugin/issues
+- **插件仓库**: https://github.com/zxc1213/crs-plugin
+- **问题反馈**: https://github.com/zxc1213/crs-plugin/issues

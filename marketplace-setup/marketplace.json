@@ -1,25 +1,25 @@
 {
   "$schema": "https://code.claude.com/docs/schemas/marketplace.json",
-  "name": "claude-req-sys",
+  "name": "crs",
   "owner": {
     "name": "19944"
   },
-  "description": "ClaudeReqSys - 智能需求管理系统",
+  "description": "CRS - 智能需求管理系统",
   "plugins": [
     {
-      "name": "claude-req-sys",
-      "displayName": "ClaudeReqSys",
+      "name": "crs",
+      "displayName": "CRS",
       "description": "智能需求管理系统 - 从需求捕获到测试完成的全流程自动化",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "19944"
       },
-      "homepage": "https://github.com/zxc1213/claude-req-sys-plugin",
-      "repository": "https://github.com/zxc1213/claude-req-sys-plugin",
+      "homepage": "https://github.com/zxc1213/crs-plugin",
+      "repository": "https://github.com/zxc1213/crs-plugin",
       "license": "MIT",
       "source": {
         "source": "github",
-        "repo": "zxc1213/claude-req-sys-plugin",
+        "repo": "zxc1213/crs-plugin",
         "ref": "main"
       },
       "keywords": [

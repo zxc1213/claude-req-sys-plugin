@@ -1,6 +1,6 @@
 {
-  "name": "claude-req-sys-plugin",
-  "version": "0.7.2",
+  "name": "crs-plugin",
+  "version": "0.8.0",
   "description": "ClaudeReqSys Plugin - 智能需求管理系统，从需求到测试的全流程自动化",
   "type": "module",
   "files": [
@@ -23,12 +23,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zxc1213/claude-req-sys-plugin.git"
+    "url": "https://github.com/zxc1213/crs-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/zxc1213/claude-req-sys-plugin/issues"
+    "url": "https://github.com/zxc1213/crs-plugin/issues"
   },
-  "homepage": "https://github.com/zxc1213/claude-req-sys-plugin#readme",
+  "homepage": "https://github.com/zxc1213/crs-plugin#readme",
   "bin": {
     "claude-req-init": "bin/claude-req-init.js",
     "claude-req-update": "bin/claude-req-update.js",

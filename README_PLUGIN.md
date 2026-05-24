@@ -1,10 +1,10 @@
-# ClaudeReqSys Plugin
+# CRS Plugin
 
 > **⚠️ 注意**: 此插件未发布到 Claude Code 官方市场。请通过 GitHub 仓库安装。
 
 > **Claude Code 插件** - 智能需求管理系统，从需求到测试的全流程自动化
 
-[![Version](https://img.shields.io/badge/version-0.7.2-blue)](https://github.com/zxc1213/claude-req-sys-plugin)
+[![Version](https://img.shields.io/badge/version-0.8.0-blue)](https://github.com/zxc1213/crs-plugin)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## 🚀 快速开始
@@ -15,18 +15,18 @@
 
 ```bash
 # 添加 marketplace
-/plugin marketplace add https://github.com/zxc1213/claude-req-sys-marketplace.git
+/plugin marketplace add https://github.com/zxc1213/crs-marketplace.git
 
 # 安装插件
-/plugin install claude-req-sys@claude-req-sys
+/plugin install crs@crs
 ```
 
 **方式二：本地开发模式**:
 
 ```bash
 # 克隆仓库到本地
-git clone https://github.com/zxc1213/claude-req-sys-plugin.git
-cd claude-req-sys-plugin
+git clone https://github.com/zxc1213/crs-plugin.git
+cd crs-plugin
 
 # 使用 cc 命令加载插件
 cc --plugin-dir .
@@ -36,8 +36,8 @@ cc --plugin-dir .
 
 ```bash
 # 克隆指定分支
-git clone -b feature/plugin-migration https://github.com/zxc1213/claude-req-sys-plugin.git
-cd claude-req-sys-plugin
+git clone -b feature/plugin-migration https://github.com/zxc1213/crs-plugin.git
+cd crs-plugin
 
 # 加载插件
 cc --plugin-dir .
@@ -49,8 +49,8 @@ cc --plugin-dir .
 
 ```bash
 # 克隆私有仓库
-git clone https://github.com/your-org/claude-req-sys-plugin.git
-cd claude-req-sys-plugin
+git clone https://github.com/your-org/crs-plugin.git
+cd crs-plugin
 
 # 加载插件
 cc --plugin-dir .
@@ -91,29 +91,29 @@ cc --plugin-dir .
 
 **核心 Skills**:
 
-- `/claude-req-sys:req-manager` - 智能需求管理统一入口
-- `/claude-req-sys:req-brainstorm` - 深度需求分析
-- `/claude-req-sys:req-init` - 初始化需求系统
+- `/crs:req-manager` - 智能需求管理统一入口
+- `/crs:req-brainstorm` - 深度需求分析
+- `/crs:req-init` - 初始化需求系统
 
 **质量保证**:
 
-- `/claude-req-sys:req-quality` - 质量门禁检查
-- `/claude-req-sys:req-test-plan` - 测试策略生成
-- `/claude-req-sys:req-verify` - 需求验证
+- `/crs:req-quality` - 质量门禁检查
+- `/crs:req-test-plan` - 测试策略生成
+- `/crs:req-verify` - 需求验证
 
 **分析评估**:
 
-- `/claude-req-sys:req-priority` - 优先级科学评估
-- `/claude-req-sys:req-metrics` - 需求度量分析
+- `/crs:req-priority` - 优先级科学评估
+- `/crs:req-metrics` - 需求度量分析
 
 **变更处理**:
 
-- `/claude-req-sys:req-change` - 需求变更管理
-- `/claude-req-sys:req-migrate` - 需求迁移
+- `/crs:req-change` - 需求变更管理
+- `/crs:req-migrate` - 需求迁移
 
 **工具**:
 
-- `/claude-req-sys:req-unify` - 文档结构统一
+- `/crs:req-unify` - 文档结构统一
 
 ### CLI 工具
 
@@ -149,13 +149,13 @@ kg-rebuild
 1. **卸载 npm 版本**:
 
    ```bash
-   npm uninstall -g claude-req-sys
+   npm uninstall -g crs
    ```
 
 2. **安装插件版本**:
 
    ```bash
-   /plugin install https://github.com/zxc1213/claude-req-sys-plugin/tree/feature/plugin-migration
+   /plugin install https://github.com/zxc1213/crs-plugin/tree/feature/plugin-migration
    ```
 
 3. **数据兼容性**: 现有的 `.requirements/` 目录完全兼容，无需迁移
@@ -166,8 +166,8 @@ kg-rebuild
 
 ```bash
 # 克隆仓库
-git clone https://github.com/zxc1213/claude-req-sys-plugin.git
-cd claude-req-sys
+git clone https://github.com/zxc1213/crs-plugin.git
+cd crs
 
 # 本地测试
 claude --plugin-dir .
@@ -179,7 +179,7 @@ claude --plugin-dir . --install
 ## 📁 插件结构
 
 ```
-claude-req-sys/
+crs/
 ├── .claude-plugin/
 │   └── plugin.json      # 插件清单
 ├── skills/              # Skills (12个)
@@ -209,8 +209,8 @@ MIT License - 详见 [LICENSE](./LICENSE) 文件
 
 ## 🔗 相关链接
 
-- [GitHub 仓库](https://github.com/zxc1213/claude-req-sys-plugin)
-- [问题反馈](https://github.com/zxc1213/claude-req-sys-plugin/issues)
+- [GitHub 仓库](https://github.com/zxc1213/crs-plugin)
+- [问题反馈](https://github.com/zxc1213/crs-plugin/issues)
 - [更新日志](./CHANGELOG.md)
 
 ---

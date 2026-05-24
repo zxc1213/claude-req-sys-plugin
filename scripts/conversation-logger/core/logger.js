@@ -141,13 +141,20 @@ export class ConversationLogger {
 
     // 保存元数据
     const metaPath = filepath.replace('.md', '.meta.json');
-    writeFileSync(metaPath, JSON.stringify({
-      id: this.currentSessionId,
-      ...session.metadata,
-      startTime: session.startTime,
-      endTime: session.endTime,
-      eventCount: session.events.length,
-    }, null, 2));
+    writeFileSync(
+      metaPath,
+      JSON.stringify(
+        {
+          id: this.currentSessionId,
+          ...session.metadata,
+          startTime: session.startTime,
+          endTime: session.endTime,
+          eventCount: session.events.length,
+        },
+        null,
+        2
+      )
+    );
 
     const result = {
       filepath,

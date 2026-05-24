@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-**ClaudeReqSys** 是一个智能需求管理系统，为 Claude Code 提供从需求捕获到测试完成的全流程管理能力。作为 npm 全局包安装，一次安装所有项目共享。
+**CRS** 是一个智能需求管理系统，为 Claude Code 提供从需求捕获到测试完成的全流程管理能力。作为 npm 全局包安装，一次安装所有项目共享。
 
 **核心特性**：
 
@@ -34,7 +34,7 @@ npm run format:check          # 检查格式
 
 # 安装与更新
 npm install -g .              # 本地开发时全局安装
-npm install -g github:zxc1213/claude-req-sys  # 从 GitHub 安装
+npm install -g github:zxc1213/crs  # 从 GitHub 安装
 ```
 
 ### 知识图谱 CLI
@@ -209,4 +209,4 @@ Fuse.js 提供轻量级的模糊搜索能力，对于需求管理场景足够：
 
 ### 独立安装架构
 
-v0.6.0 起，文件复制到独立位置（`~/.claude/claude-req-sys/`），避免依赖 npm 缓存。
+v0.6.0 起，文件复制到独立位置（`~/.claude/crs/`），避免依赖 npm 缓存。

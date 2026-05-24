@@ -1,4 +1,4 @@
-# ClaudeReqSys 项目结构说明
+# CRS 项目结构说明
 
 > **版本**: v0.6.0 Plugin  
 > **分支**: feature/plugin-migration  
@@ -8,7 +8,7 @@
 
 ## 📋 项目概述
 
-**ClaudeReqSys** 是一个智能需求管理系统，为 Claude Code 提供从需求捕获到测试完成的全流程管理能力。作为 Claude Code 插件，它提供了完整的的需求管理、知识图谱、质量门禁等功能。
+**CRS** 是一个智能需求管理系统，为 Claude Code 提供从需求捕获到测试完成的全流程管理能力。作为 Claude Code 插件，它提供了完整的的需求管理、知识图谱、质量门禁等功能。
 
 ### 核心特性
 
@@ -26,7 +26,7 @@
 ### 根目录文件
 
 ```
-claude-req-sys/
+crs/
 ├── README.md                  # 项目主文档（版本选择说明）
 ├── README_PLUGIN.md           # 插件版本完整文档 ⭐
 ├── INSTALL.md                 # 插件安装指南
@@ -575,30 +575,30 @@ zread generate --resume
 
 ```bash
 # 列出仓库目录结构
-zread ls zxc1213/claude-req-sys
+zread ls zxc1213/crs
 
 # 查看特定目录
-zread ls zxc1213/claude-req-sys:scripts/
+zread ls zxc1213/crs:scripts/
 ```
 
 **读取文件内容**：
 
 ```bash
 # 读取单个文件
-zread cat zxc1213/claude-req-sys:scripts/requirement-manager/core/processor.js
+zread cat zxc1213/crs:scripts/requirement-manager/core/processor.js
 
 # 读取多个文件
-zread cat zxc1213/claude-req-sys:package.json README.md
+zread cat zxc1213/crs:package.json README.md
 ```
 
 **搜索代码**：
 
 ```bash
 # 在仓库中搜索关键词
-zread search zxc1213/claude-req-sys "需求处理器"
+zread search zxc1213/crs "需求处理器"
 
 # 搜索函数定义
-zread search zxc1213/claude-req-sys "function.*create"
+zread search zxc1213/crs "function.*create"
 ```
 
 #### 配置管理

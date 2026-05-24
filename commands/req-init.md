@@ -1,10 +1,10 @@
 ---
-description: 初始化 ClaudeReqSys 项目 - 创建目录结构和配置文件
+description: 初始化 CRS 项目 - 创建目录结构和配置文件
 ---
 
 # 需求管理系统初始化命令
 
-初始化 ClaudeReqSys 项目，创建必要的目录结构和配置文件。
+初始化 CRS 项目，创建必要的目录结构和配置文件。
 
 ## 用法
 
@@ -79,7 +79,7 @@ description: 初始化 ClaudeReqSys 项目 - 创建目录结构和配置文件
 ## 输出示例
 
 ```markdown
-🎯 ClaudeReqSys 项目初始化
+🎯 CRS 项目初始化
 
 📁 创建项目目录...
 ✓ .requirements/features
@@ -101,7 +101,7 @@ description: 初始化 ClaudeReqSys 项目 - 创建目录结构和配置文件
 
 ✅ 项目初始化完成!
 
-📊 ClaudeReqSys 已就绪
+📊 CRS 已就绪
 
 开始使用:
 /req 添加你的第一个需求
@@ -126,8 +126,8 @@ description: 初始化 ClaudeReqSys 项目 - 创建目录结构和配置文件
 此命令调用以下脚本：
 
 - **主脚本**: `bin/claude-req-init.js`
-- **包位置**: 通过 `require.resolve('claude-req-sys/package.json')` 定位
-- **安装位置**: `~/.claude/claude-req-sys/`（独立安装架构）
+- **包位置**: 通过 `require.resolve('crs/package.json')` 定位
+- **安装位置**: `~/.claude/crs/`（独立安装架构）
 
 ## 版本历史
 

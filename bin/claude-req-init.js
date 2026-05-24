@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * ClaudeReqSys 项目初始化命令
+ * CRS 项目初始化命令
  * 使用: claude-req-init [--version|-v]
  *
  * 首次运行时自动安装全局配置到 ~/.claude/
@@ -18,7 +18,7 @@ const ROOT = path.dirname(__dirname);
 // 检查版本参数
 if (process.argv.includes('--version') || process.argv.includes('-v')) {
   const packageJson = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
-  console.log(`claude-req-sys v${packageJson.version}`);
+  console.log(`crs v${packageJson.version}`);
   process.exit(0);
 }
 
@@ -32,7 +32,7 @@ if (needsGlobalSetup) {
 
   try {
     // 获取包安装位置
-    const packageJsonPath = require.resolve('claude-req-sys/package.json');
+    const packageJsonPath = require.resolve('crs/package.json');
     const pkgDir = path.dirname(packageJsonPath);
 
     // 创建全局目录
@@ -111,12 +111,12 @@ if (needsGlobalSetup) {
   } catch (error) {
     console.error('❌ 全局配置安装失败:', error.message);
     console.log('\n您可以手动运行安装脚本:');
-    console.log('  cd claude-req-sys');
+    console.log('  cd crs');
     console.log('  bash install.sh\n');
   }
 }
 
-console.log('🎯 ClaudeReqSys 项目初始化\n');
+console.log('🎯 CRS 项目初始化\n');
 
 // 获取项目根目录
 const projectRoot = process.cwd();
@@ -198,7 +198,7 @@ if (!fs.existsSync(metricsDataPath)) {
 }
 
 console.log('\n✅ 项目初始化完成!\n');
-console.log('📊 ClaudeReqSys 已就绪\n');
+console.log('📊 CRS 已就绪\n');
 console.log('开始使用:');
 console.log('  /req 添加你的第一个需求');
 console.log('  /req --dashboard 查看仪表板\n');

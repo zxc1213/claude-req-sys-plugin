@@ -1,6 +1,6 @@
-# ClaudeReqSys 插件安装指南
+# CRS 插件安装指南
 
-> **通过 Marketplace 快速安装 ClaudeReqSys 插件**
+> **通过 Marketplace 快速安装 CRS 插件**
 
 ## 🚀 安装方法
 
@@ -8,10 +8,10 @@
 
 ```bash
 # 1. 添加 Marketplace
-/plugin marketplace add zxc1213/claude-req-sys-marketplace
+/plugin marketplace add zxc1213/crs-marketplace
 
 # 2. 安装插件
-/plugin install claude-req-sys@claude-req-sys
+/plugin install crs@crs
 
 # 3. 验证安装
 /r --help
@@ -20,7 +20,7 @@
 ### 方法 2: 直接从 GitHub 安装
 
 ```bash
-/plugin install https://github.com/zxc1213/claude-req-sys-plugin
+/plugin install https://github.com/zxc1213/crs-plugin
 ```
 
 ## ✅ 验证安装
@@ -42,17 +42,17 @@
 
 ```bash
 # 更新到最新版本
-/plugin update claude-req-sys@claude-req-sys
+/plugin update crs@crs
 ```
 
 ## 🗑️ 卸载插件
 
 ```bash
 # 卸载插件
-/plugin remove claude-req-sys@claude-req-sys
+/plugin remove crs@crs
 
 # 移除 Marketplace（可选）
-/plugin marketplace remove claude-req-sys
+/plugin marketplace remove crs
 ```
 
 ## 📝 快速命令参考
@@ -98,15 +98,15 @@ kg-rebuild               # 重建索引
 **A**:
 ```bash
 /plugin list                    # 查看所有插件
-/plugin list claude-req-sys      # 查看插件详情
+/plugin list crs      # 查看插件详情
 ```
 
 ### Q: 安装失败怎么办？
 
 **A**: 检查网络连接，或尝试：
 ```bash
-/plugin marketplace update claude-req-sys
-/plugin install claude-req-sys@claude-req-sys
+/plugin marketplace update crs
+/plugin install crs@crs
 ```
 
 ### Q: hooks 不工作？
@@ -117,4 +117,4 @@ kg-rebuild               # 重建索引
 
 - [完整文档](README.md)
 - [Marketplace 配置](marketplace-setup/INSTALL.md)
-- [问题反馈](https://github.com/zxc1213/claude-req-sys-plugin/issues)
+- [问题反馈](https://github.com/zxc1213/crs-plugin/issues)

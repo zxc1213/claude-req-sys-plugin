@@ -1,17 +1,17 @@
-# ClaudeReqSys Plugin - Marketplace 安装指南
+# CRS Plugin - Marketplace 安装指南
 
 ## 快速安装
 
 ### 1. 添加 Marketplace
 
 ```bash
-/plugin marketplace add zxc1213/claude-req-sys-marketplace
+/plugin marketplace add zxc1213/crs-marketplace
 ```
 
 ### 2. 安装插件
 
 ```bash
-/plugin install claude-req-sys@claude-req-sys
+/plugin install crs@crs
 ```
 
 ## 验证安装
@@ -75,7 +75,7 @@ your-project/
 1. 确保使用的是最新版本的 Claude Code
 2. 尝试更新 marketplace：
    ```bash
-   /plugin marketplace update claude-req-sys
+   /plugin marketplace update crs
    ```
 
 ### 插件未生效
@@ -87,10 +87,10 @@ your-project/
 
 2. 如果显示已禁用，启用它：
    ```bash
-   /plugin enable claude-req-sys@claude-req-sys
+   /plugin enable crs@crs
    ```
 
 ## 更多信息
 
-- [项目主页](https://github.com/zxc1213/claude-req-sys-plugin)
-- [完整文档](https://github.com/zxc1213/claude-req-sys-plugin/blob/main/README.md)
+- [项目主页](https://github.com/zxc1213/crs-plugin)
+- [完整文档](https://github.com/zxc1213/crs-plugin/blob/main/README.md)

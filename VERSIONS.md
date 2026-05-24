@@ -1,8 +1,8 @@
-# ClaudeReqSys 版本说明
+# CRS 版本说明
 
 > **Claude Code 插件版本**
 
-ClaudeReqSys 现在提供 **Claude Code 插件**作为主要安装方式。
+CRS 现在提供 **Claude Code 插件**作为主要安装方式。
 
 ---
 
@@ -14,35 +14,35 @@ ClaudeReqSys 现在提供 **Claude Code 插件**作为主要安装方式。
 **安装**:
 
 ```bash
-/plugin install https://github.com/zxc1213/claude-req-sys/tree/feature/plugin-migration
+/plugin install https://github.com/zxc1213/crs/tree/feature/plugin-migration
 ```
 
 **特点**:
 
 - ✅ 一键安装，无需手动配置
 - ✅ hooks 自动生效
-- ✅ Skills 调用: `/claude-req-sys:req-manager`
+- ✅ Skills 调用: `/crs:req-manager`
 - ✅ 环境变量自动设置
-- ✅ 更新方便: `/plugin update claude-req-sys`
+- ✅ 更新方便: `/plugin update crs`
 
 **Skills**:
 
-- `/claude-req-sys:req-manager` - 智能需求管理
-- `/claude-req-sys:req-brainstorm` - 深度需求分析
-- `/claude-req-sys:req-priority` - 优先级评估
-- `/claude-req-sys:req-quality` - 质量门禁
+- `/crs:req-manager` - 智能需求管理
+- `/crs:req-brainstorm` - 深度需求分析
+- `/crs:req-priority` - 优先级评估
+- `/crs:req-quality` - 质量门禁
 - ...更多 skills
 
 **更新**:
 
 ```bash
-/plugin update claude-req-sys
+/plugin update crs
 ```
 
 **卸载**:
 
 ```bash
-/plugin uninstall claude-req-sys
+/plugin uninstall crs
 ```
 
 ---
@@ -61,7 +61,7 @@ ClaudeReqSys 现在提供 **Claude Code 插件**作为主要安装方式。
 
 - **插件版本文档**: [README_PLUGIN.md](README_PLUGIN.md)
 - **插件安装指南**: [INSTALL.md](INSTALL.md)
-- **项目主页**: https://github.com/zxc1213/claude-req-sys-plugin
+- **项目主页**: https://github.com/zxc1213/crs-plugin
 
 ---
 

@@ -18,7 +18,7 @@
 /plugin marketplace add https://github.com/zxc1213/crs-marketplace.git
 
 # 安装插件
-/plugin install crs@crs
+/plugin install crs/crs
 ```
 
 **方式二：本地开发模式**:

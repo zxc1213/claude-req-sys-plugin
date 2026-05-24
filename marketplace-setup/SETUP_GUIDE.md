@@ -51,7 +51,7 @@ git push -u origin main
 /plugin marketplace add zxc1213/crs-marketplace
 
 # 安装插件
-/plugin install crs@crs
+/plugin install crs/crs
 ```
 
 ### 更新 marketplace

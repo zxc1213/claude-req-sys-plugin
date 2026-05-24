@@ -23,7 +23,7 @@
 添加 marketplace 后，安装插件：
 
 ```bash
-/plugin install crs@crs
+/plugin install crs/crs
 ```
 
 ## 仓库结构

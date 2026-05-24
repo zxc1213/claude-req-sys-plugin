@@ -11,7 +11,7 @@
 /plugin marketplace add zxc1213/crs-marketplace
 
 # 2. 安装插件
-/plugin install crs@crs
+/plugin install crs/crs
 
 # 3. 验证安装
 /r --help
@@ -106,7 +106,7 @@ kg-rebuild               # 重建索引
 **A**: 检查网络连接，或尝试：
 ```bash
 /plugin marketplace update crs
-/plugin install crs@crs
+/plugin install crs/crs
 ```
 
 ### Q: hooks 不工作？

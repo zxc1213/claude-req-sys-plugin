@@ -11,7 +11,7 @@
 /plugin marketplace add zxc1213/crs-marketplace
 
 # 2. 安装插件
-/plugin install crs@crs
+/plugin install crs/crs
 
 # 3. 开始使用
 /r 添加新功能

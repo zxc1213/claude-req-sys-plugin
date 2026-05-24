@@ -1,16 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-/**
- * Plugin Hook Bootstrap
- * 动态发现插件根目录并执行目标 hook 脚本。
- *
- * 用法: node plugin-hook-bootstrap.js <hook-script-path> [args...]
- */
-
-import path from 'path';
-import fs from 'fs';
-import { homedir } from 'os';
+const path = require('path');
+const fs = require('fs');
+const { homedir } = require('os');
 
 const SENTINEL = 'scripts/hooks/plugin-hook-bootstrap.js';
 

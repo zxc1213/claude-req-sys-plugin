@@ -9,6 +9,13 @@ import { syncPlanStatus } from '../utils/plan-sync.js';
 import path from 'path';
 import fs from 'fs/promises';
 import { getKnowledgeGraph } from '../../knowledge-graph/index.js';
+import { fileURLToPath } from 'url';
+
+/**
+ * Templates directory path (resolved relative to this module)
+ */
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const TEMPLATES_DIR = path.resolve(__dirname, '../../../templates');
 
 /**
  * 类型到前缀的映射
@@ -51,179 +58,18 @@ const FLAG_MAPPING = {
   '-f': 'feature',
 };
 
-/**
- * 生成 spec.md 骨架
- */
-function generateSpecSkeleton(id, type, title, description) {
-  const now = new Date().toISOString().slice(0, 10);
-  return `# ${title}
-
-## 元数据
-
-- **ID**: ${id}
-- **类型**: ${type}
-- **状态**: planning
-- **优先级**: 待评估
-- **创建时间**: ${now}
-
-## 需求分析
-
-### 背景与目标
-
-<!-- TODO: 描述需求的业务背景和要达成的目标 -->
-
-### 用户故事
-
-<!-- TODO: 作为<角色>，我想要<功能>，以便<价值> -->
-
-### 验收标准
-
-<!-- TODO: 列出具体的验收条件 -->
-
-1.
-
-### 开放问题
-
-<!-- TODO: 待确认的问题 -->
-
-## 设计方案
-
-### 系统架构
-
-<!-- TODO: 描述整体架构设计 -->
-
-### 核心组件
-
-<!-- TODO: 列出核心组件及其职责 -->
-
-### 数据流设计
-
-<!-- TODO: 描述数据如何在组件间流动 -->
-
-### 接口定义
-
-<!-- TODO: 定义 API 接口或模块接口 -->
-
-### 技术选型
-
-<!-- TODO: 说明关键技术选择及理由 -->
-
-### 错误处理
-
-<!-- TODO: 描述异常场景和处理策略 -->
-
-## 测试策略
-
-### 测试范围
-
-<!-- TODO: 描述需要测试的范围 -->
-
-### 测试类型
-
-<!-- TODO: 单元测试 / 集成测试 / E2E 测试 -->
-
-## 实施计划
-
-### 任务分解
-
-<!-- TODO: 参见 plan.md -->
-
-### 依赖关系
-
-<!-- TODO: 描述任务间的依赖 -->
-
-### 风险与应对
-
-<!-- TODO: 识别风险并给出应对方案 -->
-
-## 变更历史
-
-| 日期 | 变更内容 | 影响分析 |
-| ---- | -------- | -------- |
-| ${now} | 创建需求 | - |
-`;
-}
 
 /**
- * 生成 plan.md 骨架
+ * Load template file and substitute ${KEY} placeholders
  */
-function generatePlanSkeleton(id, title) {
-  const now = new Date().toISOString().slice(0, 10);
-  return `# ${title} — 实施计划
-
-> 需求 ID: ${id} | 创建: ${now}
-
-## 任务分解
-
-| # | 任务 | 状态 | 预估 | 依赖 |
-| - | ---- | ---- | ---- | ---- |
-| 1 | <!-- TODO: 拆分具体任务 --> | pending | - | - |
-
-## 里程碑
-
-- [ ] 阶段1：<!-- TODO: 定义里程碑 -->
-- [ ] 阶段2：
-- [ ] 阶段3：
-
-## 依赖清单
-
-<!-- TODO: 列出外部依赖、模块依赖 -->
-
-## 风险清单
-
-| 风险 | 影响 | 概率 | 应对 |
-| ---- | ---- | ---- | ---- |
-<!-- TODO: 识别风险 -->
-
-## 变更记录
-
-| 日期 | 内容 |
-| ---- | ---- |
-| ${now} | 创建实施计划 |
-`;
-}
-
-/**
- * 生成 test-cases.md 骨架
- */
-function generateTestCasesSkeleton(id, title) {
-  const now = new Date().toISOString().slice(0, 10);
-  return `# ${title} — 测试用例
-
-> 需求 ID: ${id} | 创建: ${now}
-
-## 测试范围
-
-| 模块 | 测试类型 | 优先级 |
-| ---- | -------- | ------ |
-<!-- TODO: 列出需要测试的模块 -->
-
-## 测试用例
-
-### 正向用例
-
-| ID | 场景 | 前置条件 | 步骤 | 预期结果 | 优先级 |
-| -- | ---- | -------- | ---- | -------- | ------ |
-<!-- TODO: 编写测试用例 -->
-
-### 异常用例
-
-| ID | 场景 | 前置条件 | 步骤 | 预期结果 | 优先级 |
-| -- | ---- | -------- | ---- | -------- | ------ |
-<!-- TODO: 编写异常场景用例 -->
-
-### 边界用例
-
-| ID | 场景 | 前置条件 | 步骤 | 预期结果 | 优先级 |
-| -- | ---- | -------- | ---- | -------- | ------ |
-<!-- TODO: 编写边界场景用例 -->
-
-## 变更记录
-
-| 日期 | 内容 |
-| ---- | ---- |
-| ${now} | 创建测试用例骨架 |
-`;
+async function loadTemplate(templateName, vars) {
+  const tplPath = path.join(TEMPLATES_DIR, templateName);
+  const tpl = await fs.readFile(tplPath, 'utf-8');
+  let result = tpl;
+  for (const [key, val] of Object.entries(vars)) {
+    result = result.split(`\${${key}}`).join(String(val));
+  }
+  return result;
 }
 
 /**
@@ -370,20 +216,21 @@ ${description}
 
     // 预生成骨架文件，避免后续步骤遗漏
     const title = meta.title;
+    const date = now.slice(0, 10);
     await fs.writeFile(
       path.join(reqPath, 'spec.md'),
-      generateSpecSkeleton(id, type, title, description),
-      'utf-8',
+      await loadTemplate('spec.md.tpl', { ID: id, TYPE: type, TITLE: title, DATE: date }),
+      'utf-8'
     );
     await fs.writeFile(
       path.join(reqPath, 'plan.md'),
-      generatePlanSkeleton(id, title),
-      'utf-8',
+      await loadTemplate('plan.md.tpl', { ID: id, TITLE: title, DATE: date }),
+      'utf-8'
     );
     await fs.writeFile(
       path.join(reqPath, 'test-cases.md'),
-      generateTestCasesSkeleton(id, title),
-      'utf-8',
+      await loadTemplate('test-cases.md.tpl', { ID: id, TITLE: title, DATE: date }),
+      'utf-8'
     );
 
     // 更新索引

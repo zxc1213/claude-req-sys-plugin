@@ -62,9 +62,9 @@
     "lint:fix": "eslint scripts/ --fix",
     "format": "prettier --write \"scripts/**/*.js\"",
     "format:check": "prettier --check \"scripts/**/*.js\"",
-    "test": "mocha tests/",
-    "test:coverage": "mocha tests/ --reporter lcov",
-    "test:verbose": "mocha tests/ --reporter spec",
-    "test:watch": "mocha tests/ --watch"
+    "test": "mocha \"tests/**/*.test.js\"",
+    "test:coverage": "mocha \"tests/**/*.test.js\" --reporter lcov",
+    "test:verbose": "mocha \"tests/**/*.test.js\" --reporter spec",
+    "test:watch": "mocha \"tests/**/*.test.js\" --watch"
   }
 }

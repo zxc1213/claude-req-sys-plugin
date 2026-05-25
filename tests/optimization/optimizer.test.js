@@ -1,5 +1,5 @@
-import { describe, it, beforeEach, afterEach } from 'vitest';
-import { expect } from 'vitest';
+import { describe, it, beforeEach, afterEach } from 'mocha';
+import { expect } from 'chai';
 import fs from 'node:fs/promises';
 import yaml from 'js-yaml';
 import { Optimizer } from '../../scripts/requirement-manager/optimization/optimizer.js';
@@ -28,10 +28,10 @@ describe('Optimizer', () => {
 
       const decision = await optimizer.generateDecision(evaluationReport);
 
-      expect(decision.id).toBeTruthy();
-      expect(decision.timestamp).toBeTruthy();
-      expect(decision.actions).toBeTruthy();
-      expect(decision.actions.length > 0).toBeTruthy();
+      expect(decision.id).to.be.ok;
+      expect(decision.timestamp).to.be.ok;
+      expect(decision.actions).to.be.ok;
+      expect(decision.actions.length > 0).to.be.ok;
     });
 
     it('应该为瓶颈类型生成针对性决策', async () => {
@@ -43,8 +43,8 @@ describe('Optimizer', () => {
       const decision = await optimizer.generateDecision(evaluationReport);
 
       const costAction = decision.actions.find((a) => a.category === 'cost');
-      expect(costAction).toBeTruthy();
-      expect(costAction.priority).toBe('critical');
+      expect(costAction).to.be.ok;
+      expect(costAction.priority).to.equal('critical');
     });
 
     it('应该为无瓶颈系统生成维护建议', async () => {
@@ -56,8 +56,8 @@ describe('Optimizer', () => {
 
       const decision = await optimizer.generateDecision(evaluationReport);
 
-      expect(decision.actions).toBeTruthy();
-      expect(decision.actions.every((a) => a.category === 'maintenance')).toBeTruthy();
+      expect(decision.actions).to.be.ok;
+      expect(decision.actions.every((a) => a.category === 'maintenance')).to.be.ok;
     });
   });
 
@@ -72,8 +72,8 @@ describe('Optimizer', () => {
 
       const prioritized = await optimizer.prioritizeActions(actions);
 
-      expect(prioritized[0].priority).toBe('critical');
-      expect(prioritized[prioritized.length - 1].priority).toBe('low');
+      expect(prioritized[0].priority).to.equal('critical');
+      expect(prioritized[prioritized.length - 1].priority).to.equal('low');
     });
 
     it('应该为相同优先级按类别排序', async () => {
@@ -86,9 +86,9 @@ describe('Optimizer', () => {
 
       const prioritized = await optimizer.prioritizeActions(actions);
 
-      expect(prioritized[0].category).toBe('cost');
-      expect(prioritized[1].category).toBe('completion');
-      expect(prioritized[2].category).toBe('test');
+      expect(prioritized[0].category).to.equal('cost');
+      expect(prioritized[1].category).to.equal('completion');
+      expect(prioritized[2].category).to.equal('test');
     });
   });
 
@@ -109,8 +109,8 @@ describe('Optimizer', () => {
 
       const result = await optimizer.applyDecision(decision);
 
-      expect(result.success).toBeTruthy();
-      expect(result.applied_actions.length).toBe(1);
+      expect(result.success).to.be.ok;
+      expect(result.applied_actions.length).to.equal(1);
     });
 
     it('应该记录应用历史', async () => {
@@ -130,8 +130,8 @@ describe('Optimizer', () => {
       await optimizer.applyDecision(decision);
 
       const history = await optimizer.getHistory();
-      expect(history.length > 0).toBeTruthy();
-      expect(history[0].decision_id).toBe('OPT-001');
+      expect(history.length > 0).to.be.ok;
+      expect(history[0].decision_id).to.equal('OPT-001');
     });
   });
 
@@ -153,8 +153,8 @@ describe('Optimizer', () => {
       await optimizer.applyDecision(decision);
       const rollbackResult = await optimizer.rollback('OPT-001');
 
-      expect(rollbackResult.success).toBeTruthy();
-      expect(rollbackResult.rolled_back_actions.length).toBe(1);
+      expect(rollbackResult.success).to.be.ok;
+      expect(rollbackResult.rolled_back_actions.length).to.equal(1);
     });
 
     it('应该记录回滚历史', async () => {
@@ -176,7 +176,7 @@ describe('Optimizer', () => {
 
       const history = await optimizer.getHistory();
       const rollbackEntry = history.find((h) => h.type === 'rollback');
-      expect(rollbackEntry).toBeTruthy();
+      expect(rollbackEntry).to.be.ok;
     });
   });
 
@@ -190,7 +190,7 @@ describe('Optimizer', () => {
 
       const validation = await optimizer.validateDecision(safeDecision);
 
-      expect(validation.valid).toBeTruthy();
+      expect(validation.valid).to.be.ok;
     });
 
     it('应该拒绝危险决策', async () => {
@@ -202,8 +202,8 @@ describe('Optimizer', () => {
 
       const validation = await optimizer.validateDecision(dangerousDecision);
 
-      expect(!validation.valid).toBeTruthy();
-      expect(validation.errors.length > 0).toBeTruthy();
+      expect(!validation.valid).to.be.ok;
+      expect(validation.errors.length > 0).to.be.ok;
     });
 
     it('应该检查决策频率限制', async () => {
@@ -225,8 +225,8 @@ describe('Optimizer', () => {
 
       const validation = await optimizer.validateDecision(frequentDecision);
 
-      expect(!validation.valid).toBeTruthy();
-      expect(validation.errors.some((e) => e.includes('frequency'))).toBeTruthy();
+      expect(!validation.valid).to.be.ok;
+      expect(validation.errors.some((e) => e.includes('frequency'))).to.be.ok;
     });
   });
 
@@ -242,8 +242,8 @@ describe('Optimizer', () => {
 
       const history = await optimizer.getHistory();
 
-      expect(Array.isArray(history)).toBeTruthy();
-      expect(history.length > 0).toBeTruthy();
+      expect(Array.isArray(history)).to.be.ok;
+      expect(history.length > 0).to.be.ok;
     });
 
     it('应该按时间倒序返回历史', async () => {
@@ -259,8 +259,8 @@ describe('Optimizer', () => {
 
       const history = await optimizer.getHistory();
 
-      expect(history[0].decision_id).toBe('OPT-2');
-      expect(history[2].decision_id).toBe('OPT-0');
+      expect(history[0].decision_id).to.equal('OPT-2');
+      expect(history[2].decision_id).to.equal('OPT-0');
     });
   });
 
@@ -279,16 +279,16 @@ describe('Optimizer', () => {
       // 生成第二个 ID
       const id2 = await optimizer.generateDecisionId();
 
-      expect(id1).toBeTruthy();
-      expect(id2).toBeTruthy();
-      expect(id1).not.toBe(id2);
+      expect(id1).to.be.ok;
+      expect(id2).to.be.ok;
+      expect(id1).not.to.equal(id2);
     });
 
     it('应该生成符合格式的 ID', async () => {
       const optimizer = new Optimizer(testDir);
       const id = await optimizer.generateDecisionId();
 
-      expect(/^OPT-\d{8}-\d{3}$/.test(id)).toBeTruthy();
+      expect(/^OPT-\d{8}-\d{3}$/.test(id)).to.be.ok;
     });
   });
 });

@@ -2,7 +2,8 @@
  * 知识图谱模块测试
  */
 
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it } from 'mocha';
+import { expect } from 'chai';
 import { KnowledgeGraph } from '../../scripts/knowledge-graph/index.js';
 import { mkdirSync, writeFileSync, rmSync } from 'fs';
 import { join } from 'path';
@@ -60,15 +61,15 @@ describe('KnowledgeGraph', () => {
   describe('#initialize', () => {
     it('应该成功初始化知识图谱', async () => {
       const reqs = graph.getAllRequirements();
-      expect(reqs.length).toBeGreaterThan(0);
+      expect(reqs.length).to.be.above(0);
     });
 
     it('应该正确加载所有类型的需求', async () => {
       const features = graph.getRequirementsByType('features');
       const bugs = graph.getRequirementsByType('bugs');
 
-      expect(features.length).toBeGreaterThan(0);
-      expect(bugs.length).toBeGreaterThan(0);
+      expect(features.length).to.be.above(0);
+      expect(bugs.length).to.be.above(0);
     });
   });
 
@@ -76,8 +77,8 @@ describe('KnowledgeGraph', () => {
     it('应该找到相似的需求', () => {
       const results = graph.findSimilarRequirements('用户');
 
-      expect(results.length).toBeGreaterThan(0);
-      expect(results[0].item.title).toContain('用户');
+      expect(results.length).to.be.above(0);
+      expect(results[0].item.title).to.include('用户');
     });
 
     it('应该按相似度排序', () => {
@@ -85,14 +86,14 @@ describe('KnowledgeGraph', () => {
 
       // 第一个结果的相似度应该最高
       if (results.length > 1) {
-        expect(results[0].score).toBeLessThanOrEqual(results[1].score);
+        expect(results[0].score).to.be.at.most(results[1].score);
       }
     });
 
     it('应该限制返回数量', () => {
       const results = graph.findSimilarRequirements('功能', 2);
 
-      expect(results.length).toBeLessThanOrEqual(2);
+      expect(results.length).to.be.at.most(2);
     });
   });
 
@@ -100,17 +101,17 @@ describe('KnowledgeGraph', () => {
     it('应该返回正确的统计信息', () => {
       const stats = graph.getStats();
 
-      expect(stats.total).toBeGreaterThan(0);
-      expect(stats.byType).toBeDefined();
-      expect(stats.byStatus).toBeDefined();
-      expect(stats.byPriority).toBeDefined();
+      expect(stats.total).to.be.above(0);
+      expect(stats.byType).to.not.be.undefined;
+      expect(stats.byStatus).to.not.be.undefined;
+      expect(stats.byPriority).to.not.be.undefined;
     });
 
     it('应该按类型分组统计', () => {
       const stats = graph.getStats();
 
-      expect(stats.byType.features).toBeDefined();
-      expect(stats.byType.bugs).toBeDefined();
+      expect(stats.byType.features).to.not.be.undefined;
+      expect(stats.byType.bugs).to.not.be.undefined;
     });
   });
 
@@ -118,9 +119,9 @@ describe('KnowledgeGraph', () => {
     it('应该按类型筛选需求', () => {
       const features = graph.getRequirementsByType('features');
 
-      expect(features.length).toBeGreaterThan(0);
+      expect(features.length).to.be.above(0);
       features.forEach((req) => {
-        expect(req.type).toBe('features');
+        expect(req.type).to.equal('features');
       });
     });
   });
@@ -130,7 +131,7 @@ describe('KnowledgeGraph', () => {
       const planningReqs = graph.getRequirementsByStatus('planning');
 
       planningReqs.forEach((req) => {
-        expect(req.status).toBe('planning');
+        expect(req.status).to.equal('planning');
       });
     });
   });
@@ -140,7 +141,7 @@ describe('KnowledgeGraph', () => {
       const p0Reqs = graph.getRequirementsByPriority('P0');
 
       p0Reqs.forEach((req) => {
-        expect(req.priority.level).toBe('P0');
+        expect(req.priority.level).to.equal('P0');
       });
     });
   });
@@ -153,9 +154,9 @@ describe('KnowledgeGraph', () => {
         currentPriority: 'P0',
       });
 
-      expect(recommendations.length).toBeGreaterThan(0);
+      expect(recommendations.length).to.be.above(0);
       recommendations.forEach((req) => {
-        expect(req.type).toBe('features');
+        expect(req.type).to.equal('features');
       });
     });
 
@@ -167,7 +168,7 @@ describe('KnowledgeGraph', () => {
       });
 
       if (recommendations.length > 1) {
-        expect(recommendations[0].priority.score).toBeGreaterThanOrEqual(
+        expect(recommendations[0].priority.score).to.be.at.least(
           recommendations[1].priority.score
         );
       }
@@ -180,7 +181,7 @@ describe('KnowledgeGraph', () => {
         currentPriority: 'P0',
       });
 
-      expect(recommendations.length).toBeLessThanOrEqual(5);
+      expect(recommendations.length).to.be.at.most(5);
     });
   });
 
@@ -202,7 +203,7 @@ describe('KnowledgeGraph', () => {
       await graph.addRequirement(newReq);
 
       const allReqs = graph.getAllRequirements();
-      expect(allReqs.some((r) => r.id === 'REQ-003')).toBe(true);
+      expect(allReqs.some((r) => r.id === 'REQ-003')).to.equal(true);
     });
   });
 
@@ -212,10 +213,10 @@ describe('KnowledgeGraph', () => {
         status: 'completed',
       });
 
-      expect(success).toBe(true);
+      expect(success).to.equal(true);
 
       const updatedReq = graph.getAllRequirements().find((r) => r.id === 'REQ-001');
-      expect(updatedReq.status).toBe('completed');
+      expect(updatedReq.status).to.equal('completed');
     });
 
     it('应该返回 false 当需求不存在时', async () => {
@@ -223,7 +224,7 @@ describe('KnowledgeGraph', () => {
         status: 'completed',
       });
 
-      expect(success).toBe(false);
+      expect(success).to.equal(false);
     });
   });
 
@@ -240,22 +241,22 @@ describe('KnowledgeGraph', () => {
 
       const success = await testGraph.deleteRequirement('REQ-001');
 
-      expect(success).toBe(true);
+      expect(success).to.equal(true);
 
       const allReqs = testGraph.getAllRequirements();
-      expect(allReqs.length).toBe(initialCount - 1);
+      expect(allReqs.length).to.equal(initialCount - 1);
 
       // 验证至少有一个 REQ-001 被删除了
       const finalReq001Count = testGraph
         .getAllRequirements()
         .filter((r) => r.id === 'REQ-001').length;
-      expect(finalReq001Count).toBe(initialReq001Count - 1);
+      expect(finalReq001Count).to.equal(initialReq001Count - 1);
     });
 
     it('应该返回 false 当需求不存在时', async () => {
       const success = await graph.deleteRequirement('NON-EXISTENT');
 
-      expect(success).toBe(false);
+      expect(success).to.equal(false);
     });
   });
 
@@ -264,7 +265,7 @@ describe('KnowledgeGraph', () => {
       await graph.rebuild();
 
       const reqs = graph.getAllRequirements();
-      expect(reqs.length).toBeGreaterThan(0);
+      expect(reqs.length).to.be.above(0);
     });
   });
 });

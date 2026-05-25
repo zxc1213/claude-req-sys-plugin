@@ -1,4 +1,5 @@
-import { describe, it, beforeEach, afterEach, expect } from 'vitest';
+import { describe, it } from 'mocha';
+import { expect } from 'chai';
 import path from 'path';
 import fs from 'fs/promises';
 import {
@@ -25,7 +26,7 @@ describe('Storage Utility', () => {
     it('should create directory structure', async () => {
       await init(TEST_BASE_DIR);
       const dirExists = await exists(TEST_BASE_DIR);
-      expect(dirExists).toBe(true);
+      expect(dirExists).to.equal(true);
     });
   });
 
@@ -33,10 +34,10 @@ describe('Storage Utility', () => {
     it('should create feature requirement directory', async () => {
       await init(TEST_BASE_DIR);
       const reqPath = await createRequirementDir(TEST_BASE_DIR, 'feature', 'FEAT-001');
-      expect(reqPath).toContain('FEAT-001');
+      expect(reqPath).to.include('FEAT-001');
       const metaFile = path.join(reqPath, 'meta.yaml');
       const metaExists = await exists(metaFile);
-      expect(metaExists).toBe(true);
+      expect(metaExists).to.equal(true);
     });
   });
 
@@ -45,9 +46,9 @@ describe('Storage Utility', () => {
       await init(TEST_BASE_DIR);
       const reqPath = await createRequirementDir(TEST_BASE_DIR, 'feature', 'FEAT-002');
       const meta = await readMeta(TEST_BASE_DIR, reqPath);
-      expect(meta).toBeTruthy();
-      expect(meta.id).toBe('FEAT-002');
-      expect(meta.type).toBe('feature');
+      expect(meta).to.be.ok;
+      expect(meta.id).to.equal('FEAT-002');
+      expect(meta.type).to.equal('feature');
     });
   });
 
@@ -55,10 +56,10 @@ describe('Storage Utility', () => {
     it('should remove test directory', async () => {
       await init(TEST_BASE_DIR);
       const existsBefore = await exists(TEST_BASE_DIR);
-      expect(existsBefore).toBe(true);
+      expect(existsBefore).to.equal(true);
       await cleanup(TEST_BASE_DIR);
       const existsAfter = await exists(TEST_BASE_DIR);
-      expect(existsAfter).toBe(false);
+      expect(existsAfter).to.equal(false);
     });
   });
 });

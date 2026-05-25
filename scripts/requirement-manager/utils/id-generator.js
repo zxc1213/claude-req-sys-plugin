@@ -34,6 +34,8 @@ async function loadCounters() {
  * 保存计数器
  */
 async function saveCounters() {
+  const dir = path.dirname(COUNTERS_FILE);
+  await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(COUNTERS_FILE, JSON.stringify(counters, null, 2));
 }
 

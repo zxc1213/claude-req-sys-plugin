@@ -1,5 +1,5 @@
-import { describe, it, beforeEach, afterEach } from 'vitest';
-import { expect } from 'vitest';
+import { describe, it, beforeEach, afterEach } from 'mocha';
+import { expect } from 'chai';
 import fs from 'node:fs/promises';
 import yaml from 'js-yaml';
 import { Upgrader } from '../../scripts/requirement-manager/optimization/upgrader.js';
@@ -33,9 +33,9 @@ describe('Upgrader', () => {
 
       const result = await upgrader.applyUpgrade(decision);
 
-      expect(result.success).toBeTruthy();
-      expect(result.version).toBeTruthy();
-      expect(result.applied_actions.length > 0).toBeTruthy();
+      expect(result.success).to.be.ok;
+      expect(result.version).to.be.ok;
+      expect(result.applied_actions.length > 0).to.be.ok;
     });
 
     it('应该创建升级版本快照', async () => {
@@ -60,7 +60,7 @@ describe('Upgrader', () => {
         .access(versionPath)
         .then(() => true)
         .catch(() => false);
-      expect(exists).toBeTruthy();
+      expect(exists).to.be.ok;
     });
 
     it('应该在升级前备份配置', async () => {
@@ -90,7 +90,7 @@ describe('Upgrader', () => {
         .access(backupPath)
         .then(() => true)
         .catch(() => false);
-      expect(backupExists).toBeTruthy();
+      expect(backupExists).to.be.ok;
     });
   });
 
@@ -117,8 +117,8 @@ describe('Upgrader', () => {
       // 回滚
       const rollbackResult = await upgrader.rollback(version);
 
-      expect(rollbackResult.success).toBeTruthy();
-      expect(rollbackResult.rollback_to).toBe(version);
+      expect(rollbackResult.success).to.be.ok;
+      expect(rollbackResult.rollback_to).to.equal(version);
     });
 
     it('应该恢复升级前的配置', async () => {
@@ -149,7 +149,7 @@ describe('Upgrader', () => {
 
       // 验证配置已恢复
       const restoredConfig = yaml.load(await fs.readFile(configPath, 'utf8'));
-      expect(restoredConfig).toEqual(originalConfig);
+      expect(restoredConfig).to.deep.equal(originalConfig);
     });
   });
 
@@ -158,8 +158,8 @@ describe('Upgrader', () => {
       const upgrader = new Upgrader(testDir);
       const version = await upgrader.getVersion();
 
-      expect(version).toBeTruthy();
-      expect(typeof version === 'string').toBeTruthy();
+      expect(version).to.be.ok;
+      expect(typeof version === 'string').to.be.ok;
     });
 
     it('应该返回系统版本历史', async () => {
@@ -177,8 +177,8 @@ describe('Upgrader', () => {
 
       const versions = await upgrader.getVersions();
 
-      expect(Array.isArray(versions)).toBeTruthy();
-      expect(versions.length >= 2).toBeTruthy();
+      expect(Array.isArray(versions)).to.be.ok;
+      expect(versions.length >= 2).to.be.ok;
     });
   });
 
@@ -192,7 +192,7 @@ describe('Upgrader', () => {
 
       const validation = await upgrader.validateUpgrade(decision);
 
-      expect(validation.valid).toBeTruthy();
+      expect(validation.valid).to.be.ok;
     });
 
     it('应该拒绝危险升级', async () => {
@@ -204,8 +204,8 @@ describe('Upgrader', () => {
 
       const validation = await upgrader.validateUpgrade(decision);
 
-      expect(!validation.valid).toBeTruthy();
-      expect(validation.errors.length > 0).toBeTruthy();
+      expect(!validation.valid).to.be.ok;
+      expect(validation.errors.length > 0).to.be.ok;
     });
 
     it('应该检查升级前置条件', async () => {
@@ -220,7 +220,7 @@ describe('Upgrader', () => {
       const validation = await upgrader.validateUpgrade(decision);
 
       // 缺少前置条件
-      expect(!validation.valid).toBeTruthy();
+      expect(!validation.valid).to.be.ok;
     });
   });
 
@@ -232,9 +232,9 @@ describe('Upgrader', () => {
         changes: ['change1', 'change2'],
       });
 
-      expect(version).toBeTruthy();
-      expect(version.version_number).toBeTruthy();
-      expect(version.timestamp).toBeTruthy();
+      expect(version).to.be.ok;
+      expect(version.version_number).to.be.ok;
+      expect(version.timestamp).to.be.ok;
     });
 
     it('应该保存版本元数据', async () => {
@@ -247,9 +247,9 @@ describe('Upgrader', () => {
       const versionPath = `${testDir}/.requirements/_system/versions/${version.version_number}.yaml`;
       const versionData = yaml.load(await fs.readFile(versionPath, 'utf8'));
 
-      expect(versionData.name).toBe('test-upgrade');
-      expect(versionData.config).toBeTruthy();
-      expect(versionData.changes).toBeTruthy();
+      expect(versionData.name).to.equal('test-upgrade');
+      expect(versionData.config).to.be.ok;
+      expect(versionData.changes).to.be.ok;
     });
   });
 
@@ -264,9 +264,9 @@ describe('Upgrader', () => {
 
       const history = await upgrader.getUpgradeHistory();
 
-      expect(Array.isArray(history)).toBeTruthy();
-      expect(history.length > 0).toBeTruthy();
-      expect(history[0].decision_id).toBe('OPT-001');
+      expect(Array.isArray(history)).to.be.ok;
+      expect(history.length > 0).to.be.ok;
+      expect(history[0].decision_id).to.equal('OPT-001');
     });
   });
 });

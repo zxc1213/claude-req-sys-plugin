@@ -1,5 +1,5 @@
-import { describe, it, beforeEach, afterEach } from 'vitest';
-import { expect } from 'vitest';
+import { describe, it, beforeEach, afterEach } from 'mocha';
+import { expect } from 'chai';
 import fs from 'node:fs/promises';
 import yaml from 'js-yaml';
 import { Evaluator } from '../../scripts/requirement-manager/optimization/evaluator.js';
@@ -52,8 +52,8 @@ describe('Evaluator', () => {
       const report = await evaluator.evaluate();
 
       expect(['excellent', 'good', 'fair', 'poor'].includes(report.system_health));
-      expect(report.completion_rate).toBe(0.85);
-      expect(report.evaluation_time).toBeTruthy();
+      expect(report.completion_rate).to.equal(0.85);
+      expect(report.evaluation_time).to.be.ok;
     });
 
     it('应该识别性能瓶颈', async () => {
@@ -67,27 +67,27 @@ describe('Evaluator', () => {
       const evaluator = new Evaluator(testDir);
       const report = await evaluator.evaluate();
 
-      expect(report.skill_evaluation).toBeTruthy();
-      expect(typeof report.skill_evaluation.best_skill === 'string').toBeTruthy();
-      expect(typeof report.skill_evaluation.worst_skill === 'string').toBeTruthy();
+      expect(report.skill_evaluation).to.be.ok;
+      expect(typeof report.skill_evaluation.best_skill === 'string').to.be.ok;
+      expect(typeof report.skill_evaluation.worst_skill === 'string').to.be.ok;
     });
 
     it('应该分析成本效率', async () => {
       const evaluator = new Evaluator(testDir);
       const report = await evaluator.evaluate();
 
-      expect(report.cost_efficiency).toBeTruthy();
-      expect(typeof report.cost_efficiency.token_usage_ratio === 'number').toBeTruthy();
-      expect(typeof report.cost_efficiency.cache_efficiency === 'string').toBeTruthy();
+      expect(report.cost_efficiency).to.be.ok;
+      expect(typeof report.cost_efficiency.token_usage_ratio === 'number').to.be.ok;
+      expect(typeof report.cost_efficiency.cache_efficiency === 'string').to.be.ok;
     });
 
     it('应该生成性能趋势分析', async () => {
       const evaluator = new Evaluator(testDir);
       const report = await evaluator.evaluate();
 
-      expect(report.trend_analysis).toBeTruthy();
-      expect(typeof report.trend_analysis.completion_trend === 'string').toBeTruthy();
-      expect(typeof report.trend_analysis.direction === 'string').toBeTruthy();
+      expect(report.trend_analysis).to.be.ok;
+      expect(typeof report.trend_analysis.completion_trend === 'string').to.be.ok;
+      expect(typeof report.trend_analysis.direction === 'string').to.be.ok;
     });
   });
 
@@ -107,8 +107,8 @@ describe('Evaluator', () => {
       const bottlenecks = await evaluator.identifyBottlenecks();
 
       const lowCompletion = bottlenecks.find((b) => b.type === 'low_completion');
-      expect(lowCompletion).toBeTruthy();
-      expect(lowCompletion.types.length > 0).toBeTruthy();
+      expect(lowCompletion).to.be.ok;
+      expect(lowCompletion.types.length > 0).to.be.ok;
     });
 
     it('应该识别低满意度 Skill', async () => {
@@ -124,8 +124,8 @@ describe('Evaluator', () => {
       const bottlenecks = await evaluator.identifyBottlenecks();
 
       const lowSatisfaction = bottlenecks.find((b) => b.type === 'low_satisfaction');
-      expect(lowSatisfaction).toBeTruthy();
-      expect(lowSatisfaction.skills.length > 0).toBeTruthy();
+      expect(lowSatisfaction).to.be.ok;
+      expect(lowSatisfaction.skills.length > 0).to.be.ok;
     });
 
     it('应该识别高 Token 使用', async () => {
@@ -142,7 +142,7 @@ describe('Evaluator', () => {
       const bottlenecks = await evaluator.identifyBottlenecks();
 
       const highCost = bottlenecks.find((b) => b.type === 'high_cost');
-      expect(highCost).toBeTruthy();
+      expect(highCost).to.be.ok;
     });
 
     it('应该识别低缓存命中率', async () => {
@@ -159,7 +159,7 @@ describe('Evaluator', () => {
       const bottlenecks = await evaluator.identifyBottlenecks();
 
       const lowCache = bottlenecks.find((b) => b.type === 'low_cache');
-      expect(lowCache).toBeTruthy();
+      expect(lowCache).to.be.ok;
     });
   });
 
@@ -169,9 +169,9 @@ describe('Evaluator', () => {
       const evaluation = await evaluator.evaluateSkills();
 
       expect(Array.isArray(evaluation.ranked_skills));
-      expect(evaluation.ranked_skills.length > 0).toBeTruthy();
-      expect(typeof evaluation.best_skill === 'string').toBeTruthy();
-      expect(typeof evaluation.worst_skill === 'string').toBeTruthy();
+      expect(evaluation.ranked_skills.length > 0).to.be.ok;
+      expect(typeof evaluation.best_skill === 'string').to.be.ok;
+      expect(typeof evaluation.worst_skill === 'string').to.be.ok;
     });
 
     it('应该按满意度排序', async () => {
@@ -181,7 +181,7 @@ describe('Evaluator', () => {
       const first = evaluation.ranked_skills[0];
       const last = evaluation.ranked_skills[evaluation.ranked_skills.length - 1];
 
-      expect(first.score >= last.score).toBeTruthy();
+      expect(first.score >= last.score).to.be.ok;
     });
   });
 
@@ -190,9 +190,9 @@ describe('Evaluator', () => {
       const evaluator = new Evaluator(testDir);
       const analysis = await evaluator.analyzeCosts();
 
-      expect(typeof analysis.usage_ratio === 'number').toBeTruthy();
-      expect(typeof analysis.cache_efficiency === 'string').toBeTruthy();
-      expect(typeof analysis.overhead === 'number').toBeTruthy();
+      expect(typeof analysis.usage_ratio === 'number').to.be.ok;
+      expect(typeof analysis.cache_efficiency === 'string').to.be.ok;
+      expect(typeof analysis.overhead === 'number').to.be.ok;
     });
 
     it('应该检测预算超支', async () => {
@@ -208,7 +208,7 @@ describe('Evaluator', () => {
       const evaluator = new Evaluator(testDir);
       const analysis = await evaluator.analyzeCosts();
 
-      expect(analysis.over_budget).toBeTruthy();
+      expect(analysis.over_budget).to.be.ok;
     });
   });
 
@@ -217,9 +217,9 @@ describe('Evaluator', () => {
       const evaluator = new Evaluator(testDir);
       const trends = await evaluator.analyzeTrends();
 
-      expect(typeof trends.completion_trend === 'string').toBeTruthy();
-      expect(typeof trends.direction === 'string').toBeTruthy();
-      expect(typeof trends.change_rate === 'number').toBeTruthy();
+      expect(typeof trends.completion_trend === 'string').to.be.ok;
+      expect(typeof trends.direction === 'string').to.be.ok;
+      expect(typeof trends.change_rate === 'number').to.be.ok;
     });
 
     it('应该检测趋势方向', async () => {
@@ -255,7 +255,7 @@ describe('Evaluator', () => {
       const suggestions = await evaluator.generateSuggestions(report);
 
       const costSuggestion = suggestions.find((s) => s.category === 'cost');
-      expect(costSuggestion).toBeTruthy();
+      expect(costSuggestion).to.be.ok;
     });
   });
 
@@ -264,15 +264,15 @@ describe('Evaluator', () => {
       const evaluator = new Evaluator(testDir);
       const score = await evaluator.calculateHealthScore();
 
-      expect(typeof score === 'number').toBeTruthy();
-      expect(score >= 0 && score <= 100).toBeTruthy();
+      expect(typeof score === 'number').to.be.ok;
+      expect(score >= 0 && score <= 100).to.be.ok;
     });
 
     it('应该基于多指标计算分数', async () => {
       const evaluator = new Evaluator(testDir);
       const score = await evaluator.calculateHealthScore();
 
-      expect(score > 50).toBeTruthy();
+      expect(score > 50).to.be.ok;
     });
   });
 });

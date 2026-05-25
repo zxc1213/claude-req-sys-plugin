@@ -1,4 +1,5 @@
-import { describe, it, beforeEach, afterEach, expect } from 'vitest';
+import { describe, it } from 'mocha';
+import { expect } from 'chai';
 import path from 'path';
 import fs from 'fs/promises';
 import { info, warn, error, success } from '../../scripts/requirement-manager/utils/logger.js';
@@ -19,8 +20,8 @@ describe('Logger Utility', () => {
       const logPath = path.join(TEST_BASE_DIR, 'info.log');
       await info('REQ-004', 'Info test', logPath);
       const content = await fs.readFile(logPath, 'utf-8');
-      expect(content).toContain('Info test');
-      expect(content).toContain('[INFO]');
+      expect(content).to.include('Info test');
+      expect(content).to.include('[INFO]');
     });
   });
 
@@ -29,8 +30,8 @@ describe('Logger Utility', () => {
       const logPath = path.join(TEST_BASE_DIR, 'warn.log');
       await warn('REQ-005', 'Warning test', logPath);
       const content = await fs.readFile(logPath, 'utf-8');
-      expect(content).toContain('Warning test');
-      expect(content).toContain('[WARN]');
+      expect(content).to.include('Warning test');
+      expect(content).to.include('[WARN]');
     });
   });
 
@@ -39,8 +40,8 @@ describe('Logger Utility', () => {
       const logPath = path.join(TEST_BASE_DIR, 'error2.log');
       await error('REQ-006', 'Error test', logPath);
       const content = await fs.readFile(logPath, 'utf-8');
-      expect(content).toContain('Error test');
-      expect(content).toContain('[ERROR]');
+      expect(content).to.include('Error test');
+      expect(content).to.include('[ERROR]');
     });
   });
 
@@ -49,8 +50,8 @@ describe('Logger Utility', () => {
       const logPath = path.join(TEST_BASE_DIR, 'success.log');
       await success('REQ-007', 'Success test', logPath);
       const content = await fs.readFile(logPath, 'utf-8');
-      expect(content).toContain('Success test');
-      expect(content).toContain('[SUCCESS]');
+      expect(content).to.include('Success test');
+      expect(content).to.include('[SUCCESS]');
     });
   });
 });

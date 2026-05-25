@@ -38,7 +38,7 @@ function resolvePluginRoot() {
         }
       }
     }
-  } catch {}
+  } catch { /* ignored */ }
 
   return path.resolve(__dirname, '..', '..');
 }

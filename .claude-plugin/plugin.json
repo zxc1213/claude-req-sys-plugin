@@ -1,6 +1,6 @@
 {
   "name": "crs",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "CRS - 智能需求管理系统，从需求到测试的全流程自动化",
   "author": {
     "name": "19944"

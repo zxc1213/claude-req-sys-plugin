@@ -1,0 +1,2913 @@
+{
+  "stats": {
+    "suites": 74,
+    "tests": 161,
+    "passes": 160,
+    "pending": 1,
+    "failures": 0,
+    "start": "2026-05-25T13:27:22.811Z",
+    "end": "2026-05-25T13:27:26.322Z",
+    "duration": 3511
+  },
+  "tests": [
+    {
+      "title": "应该格式化单个事件为 Markdown",
+      "fullTitle": "ContentFormatter 应该格式化单个事件为 Markdown",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\formatter.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该格式化工具调用",
+      "fullTitle": "ContentFormatter 应该格式化工具调用",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\formatter.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成完整文档",
+      "fullTitle": "ContentFormatter 应该生成完整文档",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\formatter.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成唯一会话 ID",
+      "fullTitle": "IDGenerator 应该生成唯一会话 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\id-generator.test.js",
+      "duration": 1003,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "应该生成符合格式的 ID",
+      "fullTitle": "IDGenerator 应该生成符合格式的 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\id-generator.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该解析会话 ID",
+      "fullTitle": "IDGenerator 应该解析会话 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\id-generator.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该启动新会话",
+      "fullTitle": "ConversationLogger 应该启动新会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\logger.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该捕获事件",
+      "fullTitle": "ConversationLogger 应该捕获事件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\logger.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该保存会话到文件",
+      "fullTitle": "ConversationLogger 应该保存会话到文件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\logger.test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建新会话",
+      "fullTitle": "SessionManager 应该创建新会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该添加事件",
+      "fullTitle": "SessionManager 应该添加事件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该标记重要",
+      "fullTitle": "SessionManager 应该标记重要",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该结束会话",
+      "fullTitle": "SessionManager 应该结束会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录工具调用事件",
+      "fullTitle": "postToolUse Hook 应该记录工具调用事件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在没有活跃会话时静默失败",
+      "fullTitle": "postToolUse Hook 应该在没有活跃会话时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在记录器抛出错误时静默失败",
+      "fullTitle": "postToolUse Hook 应该在记录器抛出错误时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录多个工具调用",
+      "fullTitle": "postToolUse Hook 应该记录多个工具调用",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该初始化记录器并返回 sessionId",
+      "fullTitle": "sessionStart Hook 应该初始化记录器并返回 sessionId",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\session-start.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该保存会话元数据",
+      "fullTitle": "sessionStart Hook 应该保存会话元数据",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\session-start.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "多次调用应该创建新会话",
+      "fullTitle": "sessionStart Hook 多次调用应该创建新会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\session-start.test.js",
+      "duration": 1115,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "应该结束会话并保存记录",
+      "fullTitle": "stop Hook 应该结束会话并保存记录",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建会话文件和元数据文件",
+      "fullTitle": "stop Hook 应该创建会话文件和元数据文件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在没有活跃会话时静默失败",
+      "fullTitle": "stop Hook 应该在没有活跃会话时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在会话结束后将状态设为 idle",
+      "fullTitle": "stop Hook 应该在会话结束后将状态设为 idle",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在保存失败时静默失败",
+      "fullTitle": "stop Hook 应该在保存失败时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确计算消息数和工具调用数",
+      "fullTitle": "stop Hook 应该正确计算消息数和工具调用数",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确保存和加载对话",
+      "fullTitle": "对话记录器集成测试 基础功能 应该正确保存和加载对话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\integration\\e2e-flow.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理不存在的对话",
+      "fullTitle": "对话记录器集成测试 基础功能 应该处理不存在的对话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\integration\\e2e-flow.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确开始和结束会话",
+      "fullTitle": "对话记录器集成测试 会话管理 应该正确开始和结束会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\integration\\e2e-flow.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse bug command with short flag",
+      "fullTitle": "Processor - parseType should parse bug command with short flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse bug command with long flag",
+      "fullTitle": "Processor - parseType should parse bug command with long flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse question command with short flag",
+      "fullTitle": "Processor - parseType should parse question command with short flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse question command with long flag",
+      "fullTitle": "Processor - parseType should parse question command with long flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse adjustment command with -a flag",
+      "fullTitle": "Processor - parseType should parse adjustment command with -a flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse adjustment command with --adjust flag",
+      "fullTitle": "Processor - parseType should parse adjustment command with --adjust flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse adjustment command with --adj flag",
+      "fullTitle": "Processor - parseType should parse adjustment command with --adj flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse refactor command with short flag",
+      "fullTitle": "Processor - parseType should parse refactor command with short flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse refactor command with --refactor flag",
+      "fullTitle": "Processor - parseType should parse refactor command with --refactor flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse refactor command with --ref flag",
+      "fullTitle": "Processor - parseType should parse refactor command with --ref flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature command with --auto flag (full_auto mode)",
+      "fullTitle": "Processor - parseType should parse feature command with --auto flag (full_auto mode)",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature command with -f flag",
+      "fullTitle": "Processor - parseType should parse feature command with -f flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature command with --feature flag",
+      "fullTitle": "Processor - parseType should parse feature command with --feature flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should default to feature type when no flag provided",
+      "fullTitle": "Processor - parseType should default to feature type when no flag provided",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle empty description",
+      "fullTitle": "Processor - parseType should handle empty description",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle command without /req prefix",
+      "fullTitle": "Processor - parseType should handle command without /req prefix",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create a bug requirement",
+      "fullTitle": "Processor - create should create a bug requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 18,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create a feature requirement",
+      "fullTitle": "Processor - create should create a feature requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create multiple requirements with incrementing IDs",
+      "fullTitle": "Processor - create should create multiple requirements with incrementing IDs",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 43,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "should create raw requirement file",
+      "fullTitle": "Processor - create should create raw requirement file",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create directory structure based on type",
+      "fullTitle": "Processor - create should create directory structure based on type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 25,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle question type",
+      "fullTitle": "Processor - create should handle question type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle adjustment type",
+      "fullTitle": "Processor - create should handle adjustment type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle refactor type",
+      "fullTitle": "Processor - create should handle refactor type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should set full_auto mode when --auto is used",
+      "fullTitle": "Processor - create should set full_auto mode when --auto is used",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update requirement status",
+      "fullTitle": "Processor - update should update requirement status",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 26,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update multiple fields",
+      "fullTitle": "Processor - update should update multiple fields",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update tags",
+      "fullTitle": "Processor - update should update tags",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 23,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should throw error for non-existent requirement",
+      "fullTitle": "Processor - update should throw error for non-existent requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should get requirement details",
+      "fullTitle": "Processor - get should get requirement details",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should throw error for non-existent requirement",
+      "fullTitle": "Processor - get should throw error for non-existent requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return complete requirement with all metadata",
+      "fullTitle": "Processor - get should return complete requirement with all metadata",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 22,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功创建需求",
+      "fullTitle": "需求管理系统集成测试 核心功能 应该成功创建需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 19,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为不同类型需求创建正确的前缀",
+      "fullTitle": "需求管理系统集成测试 核心功能 应该为不同类型需求创建正确的前缀",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 44,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "应该检测敏感信息",
+      "fullTitle": "需求管理系统集成测试 核心功能 应该检测敏感信息",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确保存需求元数据",
+      "fullTitle": "需求管理系统集成测试 需求文件结构 应该正确保存需求元数据",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 19,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为每个需求生成执行计划",
+      "fullTitle": "需求管理系统集成测试 执行计划生成 应该为每个需求生成执行计划",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该提供下一步操作指导",
+      "fullTitle": "需求管理系统集成测试 执行计划生成 应该提供下一步操作指导",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "应该处理 list 命令",
+      "fullTitle": "需求管理系统集成测试 查询命令 应该处理 list 命令",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理 dashboard 命令",
+      "fullTitle": "需求管理系统集成测试 查询命令 应该处理 dashboard 命令",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理 status 命令",
+      "fullTitle": "需求管理系统集成测试 查询命令 应该处理 status 命令",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理空输入",
+      "fullTitle": "需求管理系统集成测试 错误处理 应该处理空输入",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该支持并发创建多个需求",
+      "fullTitle": "需求管理系统集成测试 并发创建 应该支持并发创建多个需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功初始化知识图谱",
+      "fullTitle": "KnowledgeGraph #initialize 应该成功初始化知识图谱",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确加载所有类型的需求",
+      "fullTitle": "KnowledgeGraph #initialize 应该正确加载所有类型的需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该找到相似的需求",
+      "fullTitle": "KnowledgeGraph #findSimilarRequirements 应该找到相似的需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按相似度排序",
+      "fullTitle": "KnowledgeGraph #findSimilarRequirements 应该按相似度排序",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该限制返回数量",
+      "fullTitle": "KnowledgeGraph #findSimilarRequirements 应该限制返回数量",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回正确的统计信息",
+      "fullTitle": "KnowledgeGraph #getStats 应该返回正确的统计信息",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按类型分组统计",
+      "fullTitle": "KnowledgeGraph #getStats 应该按类型分组统计",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按类型筛选需求",
+      "fullTitle": "KnowledgeGraph #getRequirementsByType 应该按类型筛选需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按状态筛选需求",
+      "fullTitle": "KnowledgeGraph #getRequirementsByStatus 应该按状态筛选需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按优先级筛选需求",
+      "fullTitle": "KnowledgeGraph #getRequirementsByPriority 应该按优先级筛选需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该基于上下文推荐相关需求",
+      "fullTitle": "KnowledgeGraph #recommendRelated 应该基于上下文推荐相关需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按优先级排序推荐结果",
+      "fullTitle": "KnowledgeGraph #recommendRelated 应该按优先级排序推荐结果",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该限制推荐数量",
+      "fullTitle": "KnowledgeGraph #recommendRelated 应该限制推荐数量",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功添加新需求",
+      "fullTitle": "KnowledgeGraph #addRequirement 应该成功添加新需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功更新需求",
+      "fullTitle": "KnowledgeGraph #updateRequirement 应该成功更新需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回 false 当需求不存在时",
+      "fullTitle": "KnowledgeGraph #updateRequirement 应该返回 false 当需求不存在时",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功删除需求",
+      "fullTitle": "KnowledgeGraph #deleteRequirement 应该成功删除需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回 false 当需求不存在时",
+      "fullTitle": "KnowledgeGraph #deleteRequirement 应该返回 false 当需求不存在时",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功重建索引",
+      "fullTitle": "KnowledgeGraph #rebuild 应该成功重建索引",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该评估系统整体性能",
+      "fullTitle": "Evaluator #evaluate 应该评估系统整体性能",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别性能瓶颈",
+      "fullTitle": "Evaluator #evaluate 应该识别性能瓶颈",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该评估 Skill 使用效果",
+      "fullTitle": "Evaluator #evaluate 应该评估 Skill 使用效果",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该分析成本效率",
+      "fullTitle": "Evaluator #evaluate 应该分析成本效率",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成性能趋势分析",
+      "fullTitle": "Evaluator #evaluate 应该生成性能趋势分析",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别低完成率类型",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别低完成率类型",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别低满意度 Skill",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别低满意度 Skill",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别高 Token 使用",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别高 Token 使用",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别低缓存命中率",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别低缓存命中率",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该评估每个 Skill 的效果",
+      "fullTitle": "Evaluator #evaluateSkills 应该评估每个 Skill 的效果",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按满意度排序",
+      "fullTitle": "Evaluator #evaluateSkills 应该按满意度排序",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该分析 Token 使用效率",
+      "fullTitle": "Evaluator #analyzeCosts 应该分析 Token 使用效率",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检测预算超支",
+      "fullTitle": "Evaluator #analyzeCosts 应该检测预算超支",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该分析完成率趋势",
+      "fullTitle": "Evaluator #analyzeTrends 应该分析完成率趋势",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检测趋势方向",
+      "fullTitle": "Evaluator #analyzeTrends 应该检测趋势方向",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成改进建议",
+      "fullTitle": "Evaluator #generateSuggestions 应该生成改进建议",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为瓶颈生成具体建议",
+      "fullTitle": "Evaluator #generateSuggestions 应该为瓶颈生成具体建议",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该计算综合健康分数",
+      "fullTitle": "Evaluator #calculateHealthScore 应该计算综合健康分数",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该基于多指标计算分数",
+      "fullTitle": "Evaluator #calculateHealthScore 应该基于多指标计算分数",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该基于评价报告生成优化决策",
+      "fullTitle": "Optimizer #generateDecision 应该基于评价报告生成优化决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为瓶颈类型生成针对性决策",
+      "fullTitle": "Optimizer #generateDecision 应该为瓶颈类型生成针对性决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为无瓶颈系统生成维护建议",
+      "fullTitle": "Optimizer #generateDecision 应该为无瓶颈系统生成维护建议",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按优先级排序决策动作",
+      "fullTitle": "Optimizer #prioritizeActions 应该按优先级排序决策动作",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为相同优先级按类别排序",
+      "fullTitle": "Optimizer #prioritizeActions 应该为相同优先级按类别排序",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该应用优化决策",
+      "fullTitle": "Optimizer #applyDecision 应该应用优化决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录应用历史",
+      "fullTitle": "Optimizer #applyDecision 应该记录应用历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该回滚优化决策",
+      "fullTitle": "Optimizer #rollback 应该回滚优化决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录回滚历史",
+      "fullTitle": "Optimizer #rollback 应该记录回滚历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该验证决策安全性",
+      "fullTitle": "Optimizer #validateDecision 应该验证决策安全性",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该拒绝危险决策",
+      "fullTitle": "Optimizer #validateDecision 应该拒绝危险决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检查决策频率限制",
+      "fullTitle": "Optimizer #validateDecision 应该检查决策频率限制",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 48,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "应该返回优化历史",
+      "fullTitle": "Optimizer #getHistory 应该返回优化历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按时间倒序返回历史",
+      "fullTitle": "Optimizer #getHistory 应该按时间倒序返回历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 29,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成唯一决策 ID",
+      "fullTitle": "Optimizer #generateDecisionId 应该生成唯一决策 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成符合格式的 ID",
+      "fullTitle": "Optimizer #generateDecisionId 应该生成符合格式的 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该应用优化升级",
+      "fullTitle": "Upgrader #applyUpgrade 应该应用优化升级",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建升级版本快照",
+      "fullTitle": "Upgrader #applyUpgrade 应该创建升级版本快照",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在升级前备份配置",
+      "fullTitle": "Upgrader #applyUpgrade 应该在升级前备份配置",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该回滚到指定版本",
+      "fullTitle": "Upgrader #rollback 应该回滚到指定版本",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该恢复升级前的配置",
+      "fullTitle": "Upgrader #rollback 应该恢复升级前的配置",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回当前版本",
+      "fullTitle": "Upgrader #getVersion 应该返回当前版本",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回系统版本历史",
+      "fullTitle": "Upgrader #getVersion 应该返回系统版本历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 18,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该验证升级安全性",
+      "fullTitle": "Upgrader #validateUpgrade 应该验证升级安全性",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该拒绝危险升级",
+      "fullTitle": "Upgrader #validateUpgrade 应该拒绝危险升级",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检查升级前置条件",
+      "fullTitle": "Upgrader #validateUpgrade 应该检查升级前置条件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建版本快照",
+      "fullTitle": "Upgrader #createVersion 应该创建版本快照",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该保存版本元数据",
+      "fullTitle": "Upgrader #createVersion 应该保存版本元数据",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回升级历史",
+      "fullTitle": "Upgrader #getUpgradeHistory 应该返回升级历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should run a simple test",
+      "fullTitle": "Import Test should run a simple test",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\test-import.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should generate feature ID with correct format",
+      "fullTitle": "ID Generator Utility generate(type) should generate feature ID with correct format",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should generate sequential IDs",
+      "fullTitle": "ID Generator Utility generate(type) should generate sequential IDs",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature ID with date format correctly",
+      "fullTitle": "ID Generator Utility parse(id) should parse feature ID with date format correctly",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return null for invalid format",
+      "fullTitle": "ID Generator Utility parse(id) should return null for invalid format",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log info message",
+      "fullTitle": "Logger Utility info(reqId, message) should log info message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log warning message",
+      "fullTitle": "Logger Utility warn(reqId, message) should log warning message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log error message",
+      "fullTitle": "Logger Utility error(reqId, message) should log error message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log success message",
+      "fullTitle": "Logger Utility success(reqId, message) should log success message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should add progress block to plan.md without existing block",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should add progress block to plan.md without existing block",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update existing progress block in plan.md",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should update existing progress block in plan.md",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return false when plan.md does not exist",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should return false when plan.md does not exist",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle all status values correctly",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should handle all status values correctly",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 29,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should sync multiple plans and return statistics",
+      "fullTitle": "plan-sync Utility syncAllPlans(baseDir, reqPaths) should sync multiple plans and return statistics",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should check all criteria when status is completed",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should check all criteria when status is completed",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 10,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should uncheck all criteria when status is open",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should uncheck all criteria when status is open",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should preserve criteria when status is in_progress",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should preserve criteria when status is in_progress",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 10,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle plan without acceptance criteria gracefully",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should handle plan without acceptance criteria gracefully",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create directory structure",
+      "fullTitle": "Storage Utility init(baseDir) should create directory structure",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create feature requirement directory",
+      "fullTitle": "Storage Utility createRequirementDir(baseDir, type, id) should create feature requirement directory",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should read existing metadata",
+      "fullTitle": "Storage Utility readMeta(baseDir, reqPath) should read existing metadata",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should remove test directory",
+      "fullTitle": "Storage Utility cleanup(testDir) should remove test directory",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ],
+  "pending": [
+    {
+      "title": "应该提供下一步操作指导",
+      "fullTitle": "需求管理系统集成测试 执行计划生成 应该提供下一步操作指导",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "failures": [],
+  "passes": [
+    {
+      "title": "应该格式化单个事件为 Markdown",
+      "fullTitle": "ContentFormatter 应该格式化单个事件为 Markdown",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\formatter.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该格式化工具调用",
+      "fullTitle": "ContentFormatter 应该格式化工具调用",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\formatter.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成完整文档",
+      "fullTitle": "ContentFormatter 应该生成完整文档",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\formatter.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成唯一会话 ID",
+      "fullTitle": "IDGenerator 应该生成唯一会话 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\id-generator.test.js",
+      "duration": 1003,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "应该生成符合格式的 ID",
+      "fullTitle": "IDGenerator 应该生成符合格式的 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\id-generator.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该解析会话 ID",
+      "fullTitle": "IDGenerator 应该解析会话 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\id-generator.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该启动新会话",
+      "fullTitle": "ConversationLogger 应该启动新会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\logger.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该捕获事件",
+      "fullTitle": "ConversationLogger 应该捕获事件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\logger.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该保存会话到文件",
+      "fullTitle": "ConversationLogger 应该保存会话到文件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\logger.test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建新会话",
+      "fullTitle": "SessionManager 应该创建新会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该添加事件",
+      "fullTitle": "SessionManager 应该添加事件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该标记重要",
+      "fullTitle": "SessionManager 应该标记重要",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该结束会话",
+      "fullTitle": "SessionManager 应该结束会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\core\\session-manager.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录工具调用事件",
+      "fullTitle": "postToolUse Hook 应该记录工具调用事件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在没有活跃会话时静默失败",
+      "fullTitle": "postToolUse Hook 应该在没有活跃会话时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在记录器抛出错误时静默失败",
+      "fullTitle": "postToolUse Hook 应该在记录器抛出错误时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录多个工具调用",
+      "fullTitle": "postToolUse Hook 应该记录多个工具调用",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\post-tool-use.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该初始化记录器并返回 sessionId",
+      "fullTitle": "sessionStart Hook 应该初始化记录器并返回 sessionId",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\session-start.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该保存会话元数据",
+      "fullTitle": "sessionStart Hook 应该保存会话元数据",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\session-start.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "多次调用应该创建新会话",
+      "fullTitle": "sessionStart Hook 多次调用应该创建新会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\session-start.test.js",
+      "duration": 1115,
+      "currentRetry": 0,
+      "speed": "slow",
+      "err": {}
+    },
+    {
+      "title": "应该结束会话并保存记录",
+      "fullTitle": "stop Hook 应该结束会话并保存记录",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建会话文件和元数据文件",
+      "fullTitle": "stop Hook 应该创建会话文件和元数据文件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在没有活跃会话时静默失败",
+      "fullTitle": "stop Hook 应该在没有活跃会话时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在会话结束后将状态设为 idle",
+      "fullTitle": "stop Hook 应该在会话结束后将状态设为 idle",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在保存失败时静默失败",
+      "fullTitle": "stop Hook 应该在保存失败时静默失败",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确计算消息数和工具调用数",
+      "fullTitle": "stop Hook 应该正确计算消息数和工具调用数",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\hooks\\stop.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确保存和加载对话",
+      "fullTitle": "对话记录器集成测试 基础功能 应该正确保存和加载对话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\integration\\e2e-flow.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理不存在的对话",
+      "fullTitle": "对话记录器集成测试 基础功能 应该处理不存在的对话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\integration\\e2e-flow.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确开始和结束会话",
+      "fullTitle": "对话记录器集成测试 会话管理 应该正确开始和结束会话",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\conversation-logger\\integration\\e2e-flow.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse bug command with short flag",
+      "fullTitle": "Processor - parseType should parse bug command with short flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse bug command with long flag",
+      "fullTitle": "Processor - parseType should parse bug command with long flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse question command with short flag",
+      "fullTitle": "Processor - parseType should parse question command with short flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse question command with long flag",
+      "fullTitle": "Processor - parseType should parse question command with long flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse adjustment command with -a flag",
+      "fullTitle": "Processor - parseType should parse adjustment command with -a flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse adjustment command with --adjust flag",
+      "fullTitle": "Processor - parseType should parse adjustment command with --adjust flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse adjustment command with --adj flag",
+      "fullTitle": "Processor - parseType should parse adjustment command with --adj flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse refactor command with short flag",
+      "fullTitle": "Processor - parseType should parse refactor command with short flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse refactor command with --refactor flag",
+      "fullTitle": "Processor - parseType should parse refactor command with --refactor flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse refactor command with --ref flag",
+      "fullTitle": "Processor - parseType should parse refactor command with --ref flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature command with --auto flag (full_auto mode)",
+      "fullTitle": "Processor - parseType should parse feature command with --auto flag (full_auto mode)",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature command with -f flag",
+      "fullTitle": "Processor - parseType should parse feature command with -f flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature command with --feature flag",
+      "fullTitle": "Processor - parseType should parse feature command with --feature flag",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should default to feature type when no flag provided",
+      "fullTitle": "Processor - parseType should default to feature type when no flag provided",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle empty description",
+      "fullTitle": "Processor - parseType should handle empty description",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle command without /req prefix",
+      "fullTitle": "Processor - parseType should handle command without /req prefix",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create a bug requirement",
+      "fullTitle": "Processor - create should create a bug requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 18,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create a feature requirement",
+      "fullTitle": "Processor - create should create a feature requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create multiple requirements with incrementing IDs",
+      "fullTitle": "Processor - create should create multiple requirements with incrementing IDs",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 43,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "should create raw requirement file",
+      "fullTitle": "Processor - create should create raw requirement file",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create directory structure based on type",
+      "fullTitle": "Processor - create should create directory structure based on type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 25,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle question type",
+      "fullTitle": "Processor - create should handle question type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle adjustment type",
+      "fullTitle": "Processor - create should handle adjustment type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle refactor type",
+      "fullTitle": "Processor - create should handle refactor type",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should set full_auto mode when --auto is used",
+      "fullTitle": "Processor - create should set full_auto mode when --auto is used",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update requirement status",
+      "fullTitle": "Processor - update should update requirement status",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 26,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update multiple fields",
+      "fullTitle": "Processor - update should update multiple fields",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update tags",
+      "fullTitle": "Processor - update should update tags",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 23,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should throw error for non-existent requirement",
+      "fullTitle": "Processor - update should throw error for non-existent requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should get requirement details",
+      "fullTitle": "Processor - get should get requirement details",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should throw error for non-existent requirement",
+      "fullTitle": "Processor - get should throw error for non-existent requirement",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return complete requirement with all metadata",
+      "fullTitle": "Processor - get should return complete requirement with all metadata",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\core\\processor.test.js",
+      "duration": 22,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功创建需求",
+      "fullTitle": "需求管理系统集成测试 核心功能 应该成功创建需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 19,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为不同类型需求创建正确的前缀",
+      "fullTitle": "需求管理系统集成测试 核心功能 应该为不同类型需求创建正确的前缀",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 44,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "应该检测敏感信息",
+      "fullTitle": "需求管理系统集成测试 核心功能 应该检测敏感信息",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确保存需求元数据",
+      "fullTitle": "需求管理系统集成测试 需求文件结构 应该正确保存需求元数据",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 19,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为每个需求生成执行计划",
+      "fullTitle": "需求管理系统集成测试 执行计划生成 应该为每个需求生成执行计划",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 15,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理 list 命令",
+      "fullTitle": "需求管理系统集成测试 查询命令 应该处理 list 命令",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理 dashboard 命令",
+      "fullTitle": "需求管理系统集成测试 查询命令 应该处理 dashboard 命令",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理 status 命令",
+      "fullTitle": "需求管理系统集成测试 查询命令 应该处理 status 命令",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该处理空输入",
+      "fullTitle": "需求管理系统集成测试 错误处理 应该处理空输入",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该支持并发创建多个需求",
+      "fullTitle": "需求管理系统集成测试 并发创建 应该支持并发创建多个需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\integration\\workflow.test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功初始化知识图谱",
+      "fullTitle": "KnowledgeGraph #initialize 应该成功初始化知识图谱",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该正确加载所有类型的需求",
+      "fullTitle": "KnowledgeGraph #initialize 应该正确加载所有类型的需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该找到相似的需求",
+      "fullTitle": "KnowledgeGraph #findSimilarRequirements 应该找到相似的需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按相似度排序",
+      "fullTitle": "KnowledgeGraph #findSimilarRequirements 应该按相似度排序",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该限制返回数量",
+      "fullTitle": "KnowledgeGraph #findSimilarRequirements 应该限制返回数量",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回正确的统计信息",
+      "fullTitle": "KnowledgeGraph #getStats 应该返回正确的统计信息",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按类型分组统计",
+      "fullTitle": "KnowledgeGraph #getStats 应该按类型分组统计",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按类型筛选需求",
+      "fullTitle": "KnowledgeGraph #getRequirementsByType 应该按类型筛选需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按状态筛选需求",
+      "fullTitle": "KnowledgeGraph #getRequirementsByStatus 应该按状态筛选需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按优先级筛选需求",
+      "fullTitle": "KnowledgeGraph #getRequirementsByPriority 应该按优先级筛选需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该基于上下文推荐相关需求",
+      "fullTitle": "KnowledgeGraph #recommendRelated 应该基于上下文推荐相关需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按优先级排序推荐结果",
+      "fullTitle": "KnowledgeGraph #recommendRelated 应该按优先级排序推荐结果",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该限制推荐数量",
+      "fullTitle": "KnowledgeGraph #recommendRelated 应该限制推荐数量",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功添加新需求",
+      "fullTitle": "KnowledgeGraph #addRequirement 应该成功添加新需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功更新需求",
+      "fullTitle": "KnowledgeGraph #updateRequirement 应该成功更新需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回 false 当需求不存在时",
+      "fullTitle": "KnowledgeGraph #updateRequirement 应该返回 false 当需求不存在时",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功删除需求",
+      "fullTitle": "KnowledgeGraph #deleteRequirement 应该成功删除需求",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回 false 当需求不存在时",
+      "fullTitle": "KnowledgeGraph #deleteRequirement 应该返回 false 当需求不存在时",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该成功重建索引",
+      "fullTitle": "KnowledgeGraph #rebuild 应该成功重建索引",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\knowledge-graph\\index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该评估系统整体性能",
+      "fullTitle": "Evaluator #evaluate 应该评估系统整体性能",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别性能瓶颈",
+      "fullTitle": "Evaluator #evaluate 应该识别性能瓶颈",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该评估 Skill 使用效果",
+      "fullTitle": "Evaluator #evaluate 应该评估 Skill 使用效果",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该分析成本效率",
+      "fullTitle": "Evaluator #evaluate 应该分析成本效率",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成性能趋势分析",
+      "fullTitle": "Evaluator #evaluate 应该生成性能趋势分析",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别低完成率类型",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别低完成率类型",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别低满意度 Skill",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别低满意度 Skill",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别高 Token 使用",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别高 Token 使用",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该识别低缓存命中率",
+      "fullTitle": "Evaluator #identifyBottlenecks 应该识别低缓存命中率",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该评估每个 Skill 的效果",
+      "fullTitle": "Evaluator #evaluateSkills 应该评估每个 Skill 的效果",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按满意度排序",
+      "fullTitle": "Evaluator #evaluateSkills 应该按满意度排序",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该分析 Token 使用效率",
+      "fullTitle": "Evaluator #analyzeCosts 应该分析 Token 使用效率",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检测预算超支",
+      "fullTitle": "Evaluator #analyzeCosts 应该检测预算超支",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该分析完成率趋势",
+      "fullTitle": "Evaluator #analyzeTrends 应该分析完成率趋势",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检测趋势方向",
+      "fullTitle": "Evaluator #analyzeTrends 应该检测趋势方向",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成改进建议",
+      "fullTitle": "Evaluator #generateSuggestions 应该生成改进建议",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为瓶颈生成具体建议",
+      "fullTitle": "Evaluator #generateSuggestions 应该为瓶颈生成具体建议",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该计算综合健康分数",
+      "fullTitle": "Evaluator #calculateHealthScore 应该计算综合健康分数",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该基于多指标计算分数",
+      "fullTitle": "Evaluator #calculateHealthScore 应该基于多指标计算分数",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\evaluator.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该基于评价报告生成优化决策",
+      "fullTitle": "Optimizer #generateDecision 应该基于评价报告生成优化决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为瓶颈类型生成针对性决策",
+      "fullTitle": "Optimizer #generateDecision 应该为瓶颈类型生成针对性决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为无瓶颈系统生成维护建议",
+      "fullTitle": "Optimizer #generateDecision 应该为无瓶颈系统生成维护建议",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按优先级排序决策动作",
+      "fullTitle": "Optimizer #prioritizeActions 应该按优先级排序决策动作",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该为相同优先级按类别排序",
+      "fullTitle": "Optimizer #prioritizeActions 应该为相同优先级按类别排序",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该应用优化决策",
+      "fullTitle": "Optimizer #applyDecision 应该应用优化决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录应用历史",
+      "fullTitle": "Optimizer #applyDecision 应该记录应用历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该回滚优化决策",
+      "fullTitle": "Optimizer #rollback 应该回滚优化决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该记录回滚历史",
+      "fullTitle": "Optimizer #rollback 应该记录回滚历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 21,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该验证决策安全性",
+      "fullTitle": "Optimizer #validateDecision 应该验证决策安全性",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该拒绝危险决策",
+      "fullTitle": "Optimizer #validateDecision 应该拒绝危险决策",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检查决策频率限制",
+      "fullTitle": "Optimizer #validateDecision 应该检查决策频率限制",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 48,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "应该返回优化历史",
+      "fullTitle": "Optimizer #getHistory 应该返回优化历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该按时间倒序返回历史",
+      "fullTitle": "Optimizer #getHistory 应该按时间倒序返回历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 29,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成唯一决策 ID",
+      "fullTitle": "Optimizer #generateDecisionId 应该生成唯一决策 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该生成符合格式的 ID",
+      "fullTitle": "Optimizer #generateDecisionId 应该生成符合格式的 ID",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\optimizer.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该应用优化升级",
+      "fullTitle": "Upgrader #applyUpgrade 应该应用优化升级",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建升级版本快照",
+      "fullTitle": "Upgrader #applyUpgrade 应该创建升级版本快照",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该在升级前备份配置",
+      "fullTitle": "Upgrader #applyUpgrade 应该在升级前备份配置",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该回滚到指定版本",
+      "fullTitle": "Upgrader #rollback 应该回滚到指定版本",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该恢复升级前的配置",
+      "fullTitle": "Upgrader #rollback 应该恢复升级前的配置",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 16,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回当前版本",
+      "fullTitle": "Upgrader #getVersion 应该返回当前版本",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回系统版本历史",
+      "fullTitle": "Upgrader #getVersion 应该返回系统版本历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 18,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该验证升级安全性",
+      "fullTitle": "Upgrader #validateUpgrade 应该验证升级安全性",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该拒绝危险升级",
+      "fullTitle": "Upgrader #validateUpgrade 应该拒绝危险升级",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该检查升级前置条件",
+      "fullTitle": "Upgrader #validateUpgrade 应该检查升级前置条件",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该创建版本快照",
+      "fullTitle": "Upgrader #createVersion 应该创建版本快照",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该保存版本元数据",
+      "fullTitle": "Upgrader #createVersion 应该保存版本元数据",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "应该返回升级历史",
+      "fullTitle": "Upgrader #getUpgradeHistory 应该返回升级历史",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\optimization\\upgrader.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should run a simple test",
+      "fullTitle": "Import Test should run a simple test",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\test-import.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should generate feature ID with correct format",
+      "fullTitle": "ID Generator Utility generate(type) should generate feature ID with correct format",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should generate sequential IDs",
+      "fullTitle": "ID Generator Utility generate(type) should generate sequential IDs",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should parse feature ID with date format correctly",
+      "fullTitle": "ID Generator Utility parse(id) should parse feature ID with date format correctly",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return null for invalid format",
+      "fullTitle": "ID Generator Utility parse(id) should return null for invalid format",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\id-generator.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log info message",
+      "fullTitle": "Logger Utility info(reqId, message) should log info message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log warning message",
+      "fullTitle": "Logger Utility warn(reqId, message) should log warning message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 9,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log error message",
+      "fullTitle": "Logger Utility error(reqId, message) should log error message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should log success message",
+      "fullTitle": "Logger Utility success(reqId, message) should log success message",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\logger.test.js",
+      "duration": 8,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should add progress block to plan.md without existing block",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should add progress block to plan.md without existing block",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should update existing progress block in plan.md",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should update existing progress block in plan.md",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 12,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return false when plan.md does not exist",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should return false when plan.md does not exist",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 2,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle all status values correctly",
+      "fullTitle": "plan-sync Utility syncPlanStatus(baseDir, reqPath) should handle all status values correctly",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 29,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should sync multiple plans and return statistics",
+      "fullTitle": "plan-sync Utility syncAllPlans(baseDir, reqPaths) should sync multiple plans and return statistics",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should check all criteria when status is completed",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should check all criteria when status is completed",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 10,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should uncheck all criteria when status is open",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should uncheck all criteria when status is open",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should preserve criteria when status is in_progress",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should preserve criteria when status is in_progress",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 10,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should handle plan without acceptance criteria gracefully",
+      "fullTitle": "plan-sync Utility syncAcceptanceCriteria() - 验收标准同步 should handle plan without acceptance criteria gracefully",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\plan-sync.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create directory structure",
+      "fullTitle": "Storage Utility init(baseDir) should create directory structure",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should create feature requirement directory",
+      "fullTitle": "Storage Utility createRequirementDir(baseDir, type, id) should create feature requirement directory",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should read existing metadata",
+      "fullTitle": "Storage Utility readMeta(baseDir, reqPath) should read existing metadata",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should remove test directory",
+      "fullTitle": "Storage Utility cleanup(testDir) should remove test directory",
+      "file": "E:\\AI_Project\\claude-req-sys-plugin\\tests\\utils\\storage.test.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}

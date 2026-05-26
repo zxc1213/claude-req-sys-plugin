@@ -3,6 +3,7 @@
   "version": "0.8.5",
   "description": "智能需求管理系统",
   "skills": "./skills/",
+  "commands": "./commands/",
   "interface": {
     "displayName": "CRS 需求管理",
     "category": "Productivity"

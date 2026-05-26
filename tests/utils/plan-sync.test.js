@@ -57,7 +57,7 @@ describe('plan-sync Utility', () => {
       const updatedPlan = await fs.readFile(planPath, 'utf-8');
       expect(updatedPlan).to.include('## 实时进度');
       expect(updatedPlan).to.include('`in_progress`');
-      expect(updatedPlan).to.include('50%'); // in_progress 对应 50%
+      expect(updatedPlan).to.include('60%'); // in_progress 对应 60%
     });
 
     it('should update existing progress block in plan.md', async () => {
@@ -134,7 +134,7 @@ describe('plan-sync Utility', () => {
     it('should handle all status values correctly', async () => {
       const statusTests = [
         { status: 'open', expectedPercent: '0%' },
-        { status: 'in_progress', expectedPercent: '50%' },
+        { status: 'in_progress', expectedPercent: '60%' },
         { status: 'completed', expectedPercent: '100%' },
         { status: 'blocked', expectedPercent: '25%' },
       ];

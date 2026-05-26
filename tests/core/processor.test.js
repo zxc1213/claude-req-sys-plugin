@@ -201,7 +201,7 @@ describe('Processor - create', () => {
     expect(meta.id).to.match(/^BUG-\d{8}-\d{3}$/);
     expect(meta.type).to.equal('bug');
     expect(meta.description).to.equal('login page crashes');
-    expect(meta.status).to.equal('open');
+    expect(meta.status).to.equal('planning');
     expect(meta.mode).to.equal('semi_auto');
   });
 
@@ -399,8 +399,12 @@ describe('Processor - update', () => {
 
   it('should throw error for non-existent requirement', async () => {
     let err;
-    try { await processor.update('NONEXISTENT-0001', { status: 'completed' }); } catch (e) { err = e; }
-    expect(err).to.be.an("Error");
+    try {
+      await processor.update('NONEXISTENT-0001', { status: 'completed' });
+    } catch (e) {
+      err = e;
+    }
+    expect(err).to.be.an('Error');
   });
 });
 
@@ -430,13 +434,17 @@ describe('Processor - get', () => {
     expect(result.id).to.equal(created.id);
     expect(result.type).to.equal('bug');
     expect(result.description).to.equal('test bug');
-    expect(result.status).to.equal('open');
+    expect(result.status).to.equal('planning');
   });
 
   it('should throw error for non-existent requirement', async () => {
     let err;
-    try { await processor.get('NONEXISTENT-0001'); } catch (e) { err = e; }
-    expect(err).to.be.an("Error");
+    try {
+      await processor.get('NONEXISTENT-0001');
+    } catch (e) {
+      err = e;
+    }
+    expect(err).to.be.an('Error');
   });
 
   it('should return complete requirement with all metadata', async () => {

@@ -8,7 +8,7 @@ import path from 'path';
 import yaml from 'js-yaml';
 
 /**
- * 扫描需求目录中的文档
+ * 扫描需求目录中的文档（仅根目录）
  * @param {string} reqPath - 需求目录路径
  * @returns {Promise<string[]>} 文档文件列表
  */
@@ -28,6 +28,72 @@ export async function scanDocuments(reqPath) {
 }
 
 /**
+ * 扫描子目录中的 .md 文件
+ * @param {string} dirPath - 子目录路径
+ * @returns {Promise<string[]>} .md 文件名列表
+ */
+export async function scanSubDocuments(dirPath) {
+  try {
+    const files = await fs.readdir(dirPath);
+    return files.filter((f) => f.endsWith('.md'));
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * 检测文件是否有实质内容（非骨架）
+ * 判断条件：文件 >500 bytes + 无 <!-- TODO: 残留 + 至少 3 行非格式化正文
+ * @param {string} filePath - 文件绝对路径
+ * @returns {Promise<boolean>} true 表示已填充
+ */
+export async function isDocumentFilled(filePath) {
+  try {
+    const stat = await fs.stat(filePath);
+    if (stat.size < 500) return false;
+
+    const content = await fs.readFile(filePath, 'utf-8');
+    if (/<!--\s*TODO:/.test(content)) return false;
+
+    const contentLines = content
+      .split('\n')
+      .filter(
+        (l) =>
+          l.trim() &&
+          !l.trim().startsWith('#') &&
+          !l.trim().startsWith('|') &&
+          !l.trim().startsWith('>') &&
+          !l.trim().startsWith('- [ ]') &&
+          !l.trim().startsWith('- [x]') &&
+          !l.trim().startsWith('---')
+      );
+    return contentLines.length >= 3;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * 扫描所有子目录，返回每个文件的填充状态
+ * @param {string} reqPath - 需求目录
+ * @returns {Promise<object>} { subDir: { fileName: boolean } }
+ */
+export async function scanSubDirectoryStatus(reqPath) {
+  const subDirs = ['spec', 'plan', 'test-cases'];
+  const result = {};
+  for (const dir of subDirs) {
+    const dirPath = path.join(reqPath, dir);
+    const files = await scanSubDocuments(dirPath);
+    const fileStatus = {};
+    for (const file of files) {
+      fileStatus[file] = await isDocumentFilled(path.join(dirPath, file));
+    }
+    result[dir] = fileStatus;
+  }
+  return result;
+}
+
+/**
  * 更新需求元数据以反映文档变化
  * @param {string} baseDir - 基础目录
  * @param {string} reqPath - 需求目录路径
@@ -37,14 +103,11 @@ export async function trackDocuments(baseDir, reqPath) {
   const metaPath = path.join(reqPath, 'meta.yaml');
 
   try {
-    // 读取现有元数据
     const content = await fs.readFile(metaPath, 'utf-8');
     const meta = yaml.load(content);
 
-    // 扫描文档
     const documents = await scanDocuments(reqPath);
 
-    // 更新文档列表
     const updatedMeta = {
       ...meta,
       documents,
@@ -52,12 +115,6 @@ export async function trackDocuments(baseDir, reqPath) {
       updatedAt: new Date().toISOString(),
     };
 
-    // 如果有文档且状态是 open，自动更新为 in_progress
-    if (documents.length > 0 && meta.status === 'open') {
-      updatedMeta.status = 'in_progress';
-    }
-
-    // 写回元数据
     const yamlContent = yaml.dump(updatedMeta, {
       indent: 2,
       lineWidth: -1,
@@ -81,11 +138,7 @@ export async function trackDocuments(baseDir, reqPath) {
  */
 export async function addDocument(baseDir, reqPath, docName, content) {
   const docPath = path.join(reqPath, docName);
-
-  // 写入文档
   await fs.writeFile(docPath, content, 'utf-8');
-
-  // 更新元数据
   await trackDocuments(baseDir, reqPath);
 }
 
@@ -107,6 +160,9 @@ export async function getDocumentSummary(reqPath) {
 
 export default {
   scanDocuments,
+  scanSubDocuments,
+  isDocumentFilled,
+  scanSubDirectoryStatus,
   trackDocuments,
   addDocument,
   getDocumentSummary,

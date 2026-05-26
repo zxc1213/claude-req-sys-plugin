@@ -5,7 +5,7 @@
 import { generate } from '../utils/id-generator.js';
 import { createRequirementDir, readMeta, writeMeta, exists } from '../utils/storage.js';
 import { trackDocuments } from '../utils/document-tracker.js';
-import { syncPlanStatus } from '../utils/plan-sync.js';
+import { syncPlanStatus, syncIndexTables } from '../utils/plan-sync.js';
 import path from 'path';
 import fs from 'fs/promises';
 import { getKnowledgeGraph } from '../../knowledge-graph/index.js';
@@ -172,7 +172,7 @@ export class Processor {
       title: description.split('\n')[0].substring(0, 100), // 第一行作为标题，限制长度
       description,
       created: now,
-      status: 'open',
+      status: 'planning',
       priority: 'medium',
       mode,
       tags: [],
@@ -227,16 +227,45 @@ ${description}
 ### 规则
 
 - 详细内容**始终写入子目录文件**，不写入根文件
-- 每次填充子文件后，更新根文件（spec.md/plan.md/test-cases.md）索引表的状态列
 - 子文件命名使用英文小写 + 短横线（kebab-case）
 - 额外文档（会议记录等）可追加到根目录
 
-### 更新 meta.yaml
+## 执行阶段指引
 
-在添加新文档后，请更新 \`meta.yaml\` 中的相关字段：
-- \`status\`: 更新需求状态
-- \`tags\`: 添加相关标签
-- 其他相关元数据
+### 状态生命周期
+
+\`\`\`
+planning → analyzed → implementing → review → done
+\`\`\`
+
+### 阶段 2 完成后 — 必须立即执行
+
+1. 确认 spec/ 下 5 个文件已写入内容（无 \`<!-- TODO:\` 残留）
+2. **更新 spec.md 索引表**：将每行的 \`待填充\` 改为 \`已填充\`
+3. **更新 meta.yaml**：\`status: planning\` → \`status: analyzed\`
+
+### 阶段 4 完成后 — 必须立即执行
+
+1. 确认 test-cases/ 下 3 个文件已写入内容
+2. **更新 test-cases.md 索引表**：将每行的 \`待填充\` 改为 \`已填充\`
+
+### 阶段 5 完成后 — 必须立即执行
+
+1. 确认 plan/ 下文件已写入内容
+2. **更新 plan.md 索引表**：将每行的 \`待填充\` 改为 \`已填充\`
+3. **更新 meta.yaml**：\`status: analyzed\` → \`status: implementing\`
+
+### 任务执行过程中
+
+- 完成一个任务时：更新 \`plan/tasks.md\` 对应任务行的 \`状态\` 列（pending → done）
+- 完成所有任务时：\`meta.yaml\` \`status\` → \`done\`
+
+### 更新索引表的方法
+
+在根文件（spec.md/plan.md/test-cases.md）的索引表中，找到对应行，将 \`待填充\` 替换为 \`已填充\`：
+\`\`
+| 背景与目标 | [spec/background.md](spec/background.md) | 已填充 |
+\`\`\`
 
 ---
 *此文件由 req 系统自动生成，请勿删除*
@@ -345,6 +374,9 @@ ${description}
     // 同步状态到 plan.md
     await syncPlanStatus(this.baseDir, reqPath);
 
+    // 同步索引表（待填充 → 已填充）
+    await syncIndexTables(reqPath);
+
     // 同步到知识图谱
     try {
       const graph = await getKnowledgeGraph(this.baseDir);
@@ -372,6 +404,9 @@ ${description}
 
     // 使用 document-tracker 更新元数据
     const updatedMeta = await trackDocuments(this.baseDir, reqPath);
+
+    // 同步索引表（待填充 → 已填充）
+    await syncIndexTables(reqPath);
 
     // 同步到知识图谱
     try {
